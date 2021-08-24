@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerMyTasksListTest extends AcmePlannerTest {
+public class ManagerMyTasksListTest extends AcmeWorkPlansTest {
 	
 	//En este test se prueba la funcionalidad list y show de las tasks propias de un manager. El resultado esperado es que se listen
 	//las tasks y se muestren sus detalles.

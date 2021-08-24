@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-public class SignUpTest extends AcmePlannerTest {
+public class SignUpTest extends AcmeWorkPlansTest {
 
 	//En este test verificaremos que se puede registrar un usuario, 
 	//para ello accederemos al formulario, lo rellenaremos y lo enviaremos

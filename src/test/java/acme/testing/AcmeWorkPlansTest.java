@@ -5,14 +5,14 @@ import org.openqa.selenium.By;
 
 import acme.framework.helpers.StringHelper;
 
-public class AcmePlannerTest extends AcmeTest{
+public class AcmeWorkPlansTest extends AcmeTest{
 	
 	@Override
 	@BeforeAll
 	public void beforeAll() {
 		super.beforeAll();
 
-		super.setBaseCamp("http", "localhost", "8080", "/Acme-Planner", "/master/welcome", "?language=en&debug=true");
+		super.setBaseCamp("http", "localhost", "8080", "/Acme-Work-Plans", "/master/welcome", "?language=en&debug=true");
 		super.setAutoPausing(false);
 		
 		this.navigateHome();

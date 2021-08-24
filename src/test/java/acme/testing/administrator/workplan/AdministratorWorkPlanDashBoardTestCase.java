@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorWorkPlanDashBoardTestCase extends AcmePlannerTest{
+public class AdministratorWorkPlanDashBoardTestCase extends AcmeWorkPlansTest{
 	
 /*En el siguiente test se provara que los valores numericos devueltos por el servicio sean correctos*/
 	

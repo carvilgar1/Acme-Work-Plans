@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerMyTasksCreateTest extends AcmePlannerTest {
+public class ManagerMyTasksCreateTest extends AcmeWorkPlansTest {
 	
 	//En este test se crea una task como manager3. Además, se lista la task recientemente creada y se
 	//muestran sus detalles. Por lo tanto, se prueba las funcionalidades list, show y create de task.

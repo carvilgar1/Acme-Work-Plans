@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanCreateTest extends AcmePlannerTest {
+public class ManagerWorkPlanCreateTest extends AcmeWorkPlansTest {
 	
 	//En este test comprobara que se crean los workplans correctamente, 
 	//para ello accederemos al formulario, rellenaremos los datos
