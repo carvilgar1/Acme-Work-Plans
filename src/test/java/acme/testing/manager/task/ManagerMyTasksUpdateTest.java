@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerMyTasksUpdateTest extends AcmePlannerTest {
+public class ManagerMyTasksUpdateTest extends AcmeWorkPlansTest {
 	
 	//En este test se actualiza una task del manager2. Además, se lista las tasks que hay creadas y se
 	//muestran sus detalles. Por lo tanto, se prueba las funcionalidades list, show y update de tasks.

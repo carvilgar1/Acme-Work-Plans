@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AnonymousShoutListTest extends AcmePlannerTest{
+public class AnonymousShoutListTest extends AcmeWorkPlansTest{
 	/*
 		En este test se comprueba que un anonimo sea capaz de listar los shouts
 		Para ello accedemos al listado de shouts a través del menu comprobando que el valor de los campos del
@@ -39,7 +39,7 @@ public class AnonymousShoutListTest extends AcmePlannerTest{
 	public void listNegative(final String username, final String password) {
 		
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/anonymous/shout/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/anonymous/shout/list");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 		

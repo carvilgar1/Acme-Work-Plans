@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AnonymousWorkPlanListTest extends AcmePlannerTest {
+public class AnonymousWorkPlanListTest extends AcmeWorkPlansTest {
 	
 	//Este método prueba las funcionalidades list y show de un workplan público y no finalizado (accediendo como un usuario anónimo).
 	//Se pretende listar workplans y mostrar sus detalles.

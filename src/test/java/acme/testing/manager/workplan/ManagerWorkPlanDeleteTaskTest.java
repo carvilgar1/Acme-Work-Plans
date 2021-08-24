@@ -6,9 +6,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanDeleteTaskTest extends AcmePlannerTest{
+public class ManagerWorkPlanDeleteTaskTest extends AcmeWorkPlansTest{
 	
 	//En este test se va a probar el caso positivo de borrar una tarea a un work plan, 
 	//para ello se verificara la carga de trabajo,

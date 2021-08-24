@@ -28,8 +28,7 @@ public class Shout extends DomainEntity{
 	@NotNull
 	protected Date moment;
 	
-	@NotBlank
-	@Size(max=25)
+	@Size(min=5, max=25)
 	protected String author;
 	
 	@NotBlank
