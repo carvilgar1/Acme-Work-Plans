@@ -1,0 +1,8 @@
+anonymous.task.list.label.title = Titulo
+anonymous.task.list.label.startDate = Fecha Inicial
+anonymous.task.list.label.endDate = Fecha Final
+anonymous.task.list.label.workFlow = Tiempo trabajado
+anonymous.task.list.label.description = Descripcion
+anonymous.task.list.label.publicTask = Tarea publica
+anonymous.task.list.label.url = Enlace
+anonymous.provider.form.button.return = Retorno

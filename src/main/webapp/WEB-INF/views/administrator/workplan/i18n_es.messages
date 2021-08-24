@@ -1,0 +1,12 @@
+administrator.workplan.list.label.publicWorkPlans = Planes de trabajo publicos
+administrator.workplan.list.label.privateWorkPlans = Planes de trabajo privados
+administrator.workplan.list.label.finishedWorkPlans = Planes de trabajo acabados
+administrator.workplan.list.label.nonFinishedWorkPlans = Planes de trabajo no acabados
+administrator.workplan.list.label.averageWorkLoad= Media Carga de Trabajo
+administrator.workplan.list.label.deviationWorkLoad = Desviación Carga de Trabajo
+administrator.workplan.list.label.maxWorkLoad = Máximo Carga de Trabajo
+administrator.workplan.list.label.minWorkLoad = Mínimo Carga de Trabajo
+administrator.workplan.list.label.averageExecutionPeriod = Media Periodo de Ejecución
+administrator.workplan.list.label.deviationExecutionPeriod = Desviación Periodo de Ejecución
+administrator.workplan.list.label.maxExecutionPeriod = Máximo Periodo de Ejecución
+administrator.workplan.list.label.minExecutionPeriod = Mínimo Periodo de Ejecución

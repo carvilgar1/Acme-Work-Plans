@@ -1,0 +1,4 @@
+administrator.spamfilter.form.button.return = Volver
+administrator.spamfilter.list.label.threshold = Umbral
+administrator.spamfilter.form.label.threshold = Umbral
+administrator.spamfilter.form.button.update = Actualizar

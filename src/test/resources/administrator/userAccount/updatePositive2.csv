@@ -1,0 +1,2 @@
+recordIndex,username,name,surname,email,roles,status,newStatus
+3,manager3,Manager3,Manager3,manager3@gmail.com,Manager Authenticated,ENABLED,KEEP

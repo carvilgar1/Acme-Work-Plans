@@ -1,0 +1,4 @@
+administrator.spamfilter.form.button.return = Return
+administrator.spamfilter.list.label.threshold = Threshold
+administrator.spamfilter.form.label.threshold = Threshold
+administrator.spamfilter.form.button.update = Update

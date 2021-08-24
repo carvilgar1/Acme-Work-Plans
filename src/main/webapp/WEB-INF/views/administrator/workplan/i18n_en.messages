@@ -1,0 +1,12 @@
+administrator.workplan.list.label.publicWorkPlans = Public Work Plans
+administrator.workplan.list.label.privateWorkPlans = Private Work Plans
+administrator.workplan.list.label.finishedWorkPlans = Finished Work Plans
+administrator.workplan.list.label.nonFinishedWorkPlans = Non-Finished Work Plans
+administrator.workplan.list.label.averageWorkLoad= Average Workload
+administrator.workplan.list.label.deviationWorkLoad = Deviation Workload
+administrator.workplan.list.label.maxWorkLoad = Max Workload
+administrator.workplan.list.label.minWorkLoad = Min Workload
+administrator.workplan.list.label.averageExecutionPeriod = Average Execution Period
+administrator.workplan.list.label.deviationExecutionPeriod = Deviation Execution Period
+administrator.workplan.list.label.maxExecutionPeriod = Max Execution Period
+administrator.workplan.list.label.minExecutionPeriod = Min Execution Period

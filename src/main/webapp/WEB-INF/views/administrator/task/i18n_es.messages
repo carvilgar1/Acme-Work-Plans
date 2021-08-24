@@ -1,0 +1,12 @@
+administrator.task.list.label.publicTasks = Tares Publicas
+administrator.task.list.label.privateTasks = Tares Privadas
+administrator.task.list.label.finishedTasks = Tares Acabadas
+administrator.task.list.label.nonFinishedTasks = Tareas No Acabadas
+administrator.task.list.label.averageWorkFlow = Media Flujo de Trabajo
+administrator.task.list.label.deviationWorkFlow = Desviación Flujo de Trabajo
+administrator.task.list.label.maxWorkFlow = Máximo Flujo de Trabajo
+administrator.task.list.label.minWorkFlow = Mínimo Flujo de Trabajo
+administrator.task.list.label.averageExecutionPeriod = Media Periodo de Ejecución
+administrator.task.list.label.deviationExecutionPeriod = Desviación Periodo de Ejecución
+administrator.task.list.label.maxExecutionPeriod = Máximo Periodo de Ejecución
+administrator.task.list.label.minExecutionPeriod = Mínimo Periodo de Ejecución

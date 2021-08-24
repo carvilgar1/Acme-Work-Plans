@@ -1,0 +1,2 @@
+publicTasks,privateTasks,finishedTasks,nonFinishedTasks,averageWorkFlow,deviationWorkFlow,maxWorkFlow,minWorkFlow,averageExecutionPeriod,deviationExecutionPeriod,maxExecutionPeriod,minExecutionPeriod
+12,6,6,12,3.11,5.43,25.00,1.00,163.00,147.43,372.00,0.00

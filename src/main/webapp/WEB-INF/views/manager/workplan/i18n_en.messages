@@ -1,0 +1,34 @@
+manager.workplan.list.label.startDate= Start Date
+manager.workplan.list.label.endDate= End Date
+manager.workplan.list.label.workLoad= Work Load
+
+manager.workplan.form.label.startDate= Start Date
+manager.workplan.form.label.endDate= End Date
+manager.workplan.form.label.workLoad= Work Load
+manager.workplan.form.label.publicPlan= IsPublic
+manager.workplan.form.button.create= Create
+manager.workplan.form.button.delete= Delete
+manager.workplan.form.button.update= Update
+manager.workplan.form.button.publish= Publish
+manager.workplan.form.button.return= Return
+manager.workplan.form.addTask= Add Task
+manager.workplan.form.button.addTask=Add
+manager.workplan.form.public.true=Visibility: Public
+manager.workplan.form.public.false=Visibility: Private
+
+
+manager.workplan.error.dates = End date must be after start date
+manager.workplan.error.startDate = Start date must be later current date
+manager.workplan.error.endDate = End date must be later current date
+manager.workplan.error.arentPublic= Any task is private
+manager.workplan.error.taskPrivate=Can't add private task into public workplan
+manager.workplan.error.differentManager= Can't add a task of other manager
+manager.workplan.error.startDate.task=Workplan start date must be before first start date of his tasks
+manager.workplan.error.endDate.task=Workplan end date must be after last end date of his tasks
+manager.workplan.error.taskStarted=Task is already started
+
+manager.workplan.message.recommend= We recommend: 
+
+manager.workplan.tasks.title= Title
+manager.workplan.tasks.description= Description
+manager.workplan.tasks.workflow= Work Flow

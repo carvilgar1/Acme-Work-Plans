@@ -1,0 +1,160 @@
+timestamp,test-class,test-method,time,description,result
+2021-06-04 22:05:12.894,acme.testing.administrator.userAccount.AdministratorUserAccountUpdateTest,updateNegative,685,"[1] username=null, password=null",OK
+2021-06-04 22:05:17.02,acme.testing.administrator.userAccount.AdministratorUserAccountUpdateTest,updateNegative,3721,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:05:25.521,acme.testing.administrator.userAccount.AdministratorUserAccountUpdateTest,updatePositive,8234,"[1] recordIndex=3, username=manager3, name=Manager3, surname=Manager3, email=manager3@gmail.com, roles=Manager Authenticated, status=ENABLED, newStatus=KEEP",OK
+2021-06-04 22:05:41.67,acme.testing.administrator.userAccount.AdministratorUserAccountListTest,listPositive,6156,"[1] recordIndex=0, username=anonymous, name=John, surname=Doe, email=john.doe@acme.com, roles=Anonymous, status=DISABLED",OK
+2021-06-04 22:05:48.034,acme.testing.administrator.userAccount.AdministratorUserAccountListTest,listPositive,6062,"[2] recordIndex=1, username=administrator, name=Administrator, surname=Acme.com, email=administrator@acme.com, roles=Administrator Authenticated, status=ENABLED",OK
+2021-06-04 22:05:54.436,acme.testing.administrator.userAccount.AdministratorUserAccountListTest,listPositive,6120,"[1] recordIndex=2, username=manager2, name=Manager2, surname=Manager2, email=manager2@gmail.com, roles=Manager Authenticated, status=ENABLED, newStatus=KEEP",OK
+2021-06-04 22:05:55.02,acme.testing.administrator.userAccount.AdministratorUserAccountListTest,listNegative,302,"[1] username=null, password=null",OK
+2021-06-04 22:05:58.883,acme.testing.administrator.userAccount.AdministratorUserAccountListTest,listNegative,3586,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:06:11.133,acme.testing.anonymous.workplan.AnonymousWorkPlanListTest,listPositive,2646,"[1] recordIndex=1, startDate=2021/08/12 12:00, endDate=2021/08/12 15:00, workLoad=2.00, publicPlan=true",OK
+2021-06-04 22:06:14.026,acme.testing.anonymous.workplan.AnonymousWorkPlanListTest,listPositive,2501,"[2] recordIndex=2, startDate=2021/07/30 10:00, endDate=2021/07/30 11:30, workLoad=26.00, publicPlan=true",OK
+2021-06-04 22:06:17.879,acme.testing.anonymous.workplan.AnonymousWorkPlanListTest,listNegative,3572,"[1] username=manager2, password=manager2",OK
+2021-06-04 22:06:21.782,acme.testing.anonymous.workplan.AnonymousWorkPlanListTest,listNegative,3634,"[2] username=administrator, password=administrator",OK
+2021-06-04 22:06:38.768,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updatePositive,7362,"[1] recordIndex=0, value=15.00",OK
+2021-06-04 22:06:46.348,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updatePositive,7230,"[2] recordIndex=0, value=20.00",OK
+2021-06-04 22:06:52.919,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updateNegative,6305,"[1] recordIndex=0, value=null",OK
+2021-06-04 22:06:59.513,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updateNegative,6324,"[2] recordIndex=0, value=asd",OK
+2021-06-04 22:07:00.167,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updateNegative,358,"[1] username=null, password=null",OK
+2021-06-04 22:07:04.082,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdUpdateTest,updateNegative,3573,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:07:19.121,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdListTest,listPositive,5324,"[1] recordIndex=0, value=10.00",OK
+2021-06-04 22:07:19.788,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdListTest,listNegative,383,"[1] username=null, password=null",OK
+2021-06-04 22:07:23.905,acme.testing.administrator.spamfilter.threshold.AdministratorThresholdListTest,listNegative,3660,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:07:38.54,acme.testing.administrator.workplan.AdministratorWorkPlanDashBoardTestCase,listPositive,4893,"[1] recordIndex=2, publicTasks=4, privateTasks=4, finishedTasks=3, nonFinishedTasks=5, averageWorkFlow=5.44, deviationWorkFlow=7.90, maxWorkFlow=26.00, minWorkFlow=0.00, averageExecutionPeriod=14.88, deviationExecutionPeriod=59.50, maxExecutionPeriod=119.00, minExecutionPeriod=0.00",OK
+2021-06-04 22:07:49.652,acme.testing.administrator.workplan.AdministratorWorkPlanDashBoardTestCase,listPositive,10843,"[2] recordIndex=0, publicTasks=5, privateTasks=3, finishedTasks=3, nonFinishedTasks=5, averageWorkFlow=5.44, deviationWorkFlow=7.90, maxWorkFlow=26.00, minWorkFlow=0.00, averageExecutionPeriod=14.88, deviationExecutionPeriod=59.50, maxExecutionPeriod=119.00, minExecutionPeriod=0.00",OK
+2021-06-04 22:07:59.752,acme.testing.administrator.workplan.AdministratorWorkPlanDashBoardTestCase,listPositive,9799,"[3] recordIndex=1, publicTasks=6, privateTasks=2, finishedTasks=3, nonFinishedTasks=5, averageWorkFlow=5.44, deviationWorkFlow=7.90, maxWorkFlow=26.00, minWorkFlow=0.00, averageExecutionPeriod=14.88, deviationExecutionPeriod=59.50, maxExecutionPeriod=119.00, minExecutionPeriod=0.00",OK
+2021-06-04 22:08:00.362,acme.testing.administrator.workplan.AdministratorWorkPlanDashBoardTestCase,listNegative,320,"[1] username=null, password=null",OK
+2021-06-04 22:08:04.278,acme.testing.administrator.workplan.AdministratorWorkPlanDashBoardTestCase,listNegative,3615,"[2] username=manager3, password=manager3",OK
+2021-06-04 22:08:21.479,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createPositive,7552,"[1] recordIndex=4, startDate=2022/06/01 14:00, endDate=2022/07/01 14:00",OK
+2021-06-04 22:08:29.32,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createPositive,7541,"[2] recordIndex=5, startDate=2022/07/15 10:00, endDate=2022/08/01 15:00",OK
+2021-06-04 22:08:34.62,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createNegative,5046,"[1] startDate=2020/06/01 14:00, endDate=2022/07/01 14:00",OK
+2021-06-04 22:08:39.953,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createNegative,5050,"[2] startDate=2022/07/15 10:00, endDate=2022/06/01 15:00",OK
+2021-06-04 22:08:45.285,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createNegative,5051,"[3] startDate=null, endDate=2022/07/01 14:00",OK
+2021-06-04 22:08:50.597,acme.testing.manager.workplan.ManagerWorkPlanCreateTest,createNegative,4984,"[4] startDate=2022/06/01 14:00, endDate=null",OK
+2021-06-04 22:09:06.419,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deletePositive,6103,"[1] recordIndex=0, startDate=2021/07/30 10:00, nextStartDate=2021/08/12 12:00",OK
+2021-06-04 22:09:12.799,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deletePositive,6084,"[2] recordIndex=0, startDate=2021/08/12 12:00, nextStartDate=2021/05/10 15:00",OK
+2021-06-04 22:09:16.652,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deleteNegative,3582,"[1] username=manager2, password=manager2",OK
+2021-06-04 22:09:20.455,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deleteNegative,3533,"[2] username=fervalnav, password=Qwerty123",OK
+2021-06-04 22:09:24.32,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deleteNegative,3574,"[3] username=administrator, password=administrator",OK
+2021-06-04 22:09:24.892,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deleteNegative,288,"[4] username=null, password=null",OK
+2021-06-04 22:09:30.754,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deletePositive,5606,"[1] id=36, nextStartDate=2021/05/30 15:00, nextEndDate=2021/05/30 18:30, nextWorkLoad=4.00",OK
+2021-06-04 22:09:36.691,acme.testing.manager.workplan.ManagerWorkPlanDeleteTest,deletePositive,5667,"[2] id=37, nextStartDate=2021/12/30 15:00, nextEndDate=2021/12/30 18:30, nextWorkLoad=2.00",OK
+2021-06-04 22:09:52.24,acme.testing.manager.workplan.ManagerWorkPlanAddTaskTest,updatePositive,5861,"[1] recordIndex=0, taskId=35, workLoad=26.00, newWorkLoad=27.00",OK
+2021-06-04 22:09:58.42,acme.testing.manager.workplan.ManagerWorkPlanAddTaskTest,updatePositive,5867,"[2] recordIndex=0, taskId=34, workLoad=27.00, newWorkLoad=28.00",OK
+2021-06-04 22:10:03.702,acme.testing.manager.workplan.ManagerWorkPlanAddTaskTest,updateNegative,4936,"[1] recordIndex=0, taskId=22",OK
+2021-06-04 22:10:09.046,acme.testing.manager.workplan.ManagerWorkPlanAddTaskTest,updateNegative,5025,"[2] recordIndex=0, taskId=25",OK
+2021-06-04 22:10:25.042,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updatePositive,6410,"[1] recordIndex=0, startDate=2021/07/10 14:00, endDate=2021/11/05 14:00",OK
+2021-06-04 22:10:31.778,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updatePositive,6432,"[2] recordIndex=1, startDate=2021/08/15 10:00, endDate=2021/10/01 15:00",OK
+2021-06-04 22:10:36.945,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updateNegative,4877,"[1] recordIndex=0, startDate=2020/08/10 14:00, endDate=2021/08/05 14:00",OK
+2021-06-04 22:10:42.127,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updateNegative,4896,"[2] recordIndex=1, startDate=2021/08/15 10:00, endDate=2021/07/01 15:00",OK
+2021-06-04 22:10:47.284,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updateNegative,4872,"[3] recordIndex=0, startDate=null, endDate=2022/07/01 14:00",OK
+2021-06-04 22:10:52.423,acme.testing.manager.workplan.ManagerWorkPlanUpdateTest,updateNegative,4837,"[4] recordIndex=0, startDate=2022/06/01 14:00, endDate=null",OK
+2021-06-04 22:11:07.776,acme.testing.manager.workplan.ManagerWorkPlanListTest,listPositive,5877,"[1] recordIndex=0, startDate=2021/07/30 10:00, endDate=2021/07/30 11:30, workLoad=26.00, publicPlan=true",OK
+2021-06-04 22:11:13.976,acme.testing.manager.workplan.ManagerWorkPlanListTest,listPositive,5887,"[2] recordIndex=1, startDate=2021/08/12 12:00, endDate=2021/08/12 15:00, workLoad=2.00, publicPlan=true",OK
+2021-06-04 22:11:14.556,acme.testing.manager.workplan.ManagerWorkPlanListTest,listNegative,297,"[1] username=null, password=null",OK
+2021-06-04 22:11:18.505,acme.testing.manager.workplan.ManagerWorkPlanListTest,listNegative,3684,"[2] username=administrator, password=administrator",OK
+2021-06-04 22:11:34.583,acme.testing.manager.workplan.ManagerWorkPlanPublishTest,updatePositive,6474,"[1] recordIndex=0",OK
+2021-06-04 22:11:41.266,acme.testing.manager.workplan.ManagerWorkPlanPublishTest,updatePositive,6416,"[2] recordIndex=1",OK
+2021-06-04 22:11:46.076,acme.testing.manager.workplan.ManagerWorkPlanPublishTest,updateNegative,4557,"[1] recordIndex=2",OK
+2021-06-04 22:12:01.294,acme.testing.manager.workplan.ManagerWorkPlanDeleteTaskTest,updatePositive,5516,"[1] recordIndex=0, taskIndex=1, workLoad=26.00, newWorkLoad=1.00",OK
+2021-06-04 22:12:07.065,acme.testing.manager.workplan.ManagerWorkPlanDeleteTaskTest,updatePositive,5519,"[2] recordIndex=0, taskIndex=1, workLoad=1.00, newWorkLoad=0.00",OK
+2021-06-04 22:12:09.872,acme.testing.manager.workplan.ManagerWorkPlanDeleteTaskTest,updateNegative,2539,"updateNegative()",OK
+2021-06-04 22:12:26.722,acme.testing.authenticated.task.AuthenticatedTaskListAllTest,listPositive,7156,"[1] recordIndex=0, title=Pintar el coche, startDate=2021/03/09 15:55, endDate=2021/03/09 16:55, workFlow=1.00, description=La pintura estaba gastada, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:12:33.419,acme.testing.authenticated.task.AuthenticatedTaskListAllTest,listPositive,6412,"[2] recordIndex=1, title=Poner el cuadro, startDate=2021/04/29 13:00, endDate=2021/04/29 14:30, workFlow=1.50, description=Colocar el cuadro en la habitación, publicTask=true, url=",OK
+2021-06-04 22:12:34.017,acme.testing.authenticated.task.AuthenticatedTaskListAllTest,listNegative,314,"listNegative()",OK
+2021-06-04 22:12:52.699,acme.testing.manager.task.ManagerMyTasksCreateTest,createPositive,9003,"[1] recordIndex=9, title=Ir a la joyeria, startDate=2022/06/09 17:30, endDate=2022/06/09 18:00, workFlow=0.00, description=LLevar el reloj a arreglar, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:13:01.466,acme.testing.manager.task.ManagerMyTasksCreateTest,createPositive,8450,"[2] recordIndex=10, title=Hacer la compra, startDate=2022/06/09 18:10, endDate=2022/06/09 19:30, workFlow=0.00, description=Ir al mercadona a comprar huevos y filetes, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:13:07.188,acme.testing.manager.task.ManagerMyTasksCreateTest,createNegative,5384,"[1] recordIndex=0, title=null, startDate=null, endDate=null, description=null, url=null",OK
+2021-06-04 22:13:12.955,acme.testing.manager.task.ManagerMyTasksCreateTest,createNegative,5473,"[2] recordIndex=0, title=Recoger al niño, startDate=fecha, endDate=fecha, description=Recoger al niño del colegio, url=https://www.google.com",OK
+2021-06-04 22:13:18.722,acme.testing.manager.task.ManagerMyTasksCreateTest,createNegative,5455,"[3] recordIndex=0, title=Sex, startDate=2022/06/09 17:30, endDate=2022/06/09 18:00, description=Sex Hard Core, url=https://www.google.com",OK
+2021-06-04 22:13:24.648,acme.testing.manager.task.ManagerMyTasksCreateTest,createNegative,5625,"[4] recordIndex=0, title=Recoger al niño, startDate=2019/06/09 17:30, endDate=2019/05/09 18:00, description=Recoger al niño del colegio, url=https://www.google.com",OK
+2021-06-04 22:13:41.736,acme.testing.manager.task.ManagerMyTasksDeleteTest,deletePositive,7287,"[1] recordIndex=0, title=Hacer de comer, startDate=2021/06/09 15:55, endDate=2022/06/09 19:55, workFlow=4.00, description=Los niños tenian mucha hambre, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:13:49.213,acme.testing.manager.task.ManagerMyTasksDeleteTest,deletePositive,7146,"[2] recordIndex=1, title=Limpiar baños, startDate=2021/06/09 15:55, endDate=2022/06/15 19:55, workFlow=25.00, description=Cambiar toallas y limpiar WC, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:13:50.095,acme.testing.manager.task.ManagerMyTasksDeleteTest,deleteNegative,486,"[1] username=null, password=null",OK
+2021-06-04 22:13:54.339,acme.testing.manager.task.ManagerMyTasksDeleteTest,deleteNegative,3785,"[2] username=administrator, password=administrator",OK
+2021-06-04 22:13:59.063,acme.testing.manager.task.ManagerMyTasksDeleteTest,deletePositive,4440,"deletePositive()",OK
+2021-06-04 22:14:16.526,acme.testing.manager.task.ManagerMyTasksUpdateTest,updatePositive,7667,"[1] recordIndex=0, title=Hacer de comer, startDate=2021/06/09 15:55, endDate=2022/06/09 19:55, workFlow=3.00, description=Los niños tienen mucha hambre, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:14:25.79,acme.testing.manager.task.ManagerMyTasksUpdateTest,updatePositive,8994,"[1] recordIndex=6, title=Cortar el cesped, startDate=2022/04/29 13:00, endDate=2022/04/29 18:30, workFlow=3.00, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:14:33.177,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6917,"[1] recordIndex=6, title=null, startDate=null, endDate=null, workFlow=null, description=null, publicTask=true, url=null",OK
+2021-06-04 22:14:40.333,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6700,"[2] recordIndex=6, title=Recoger al niño, startDate=fecha, endDate=fecha, workFlow=2, description=Recoger al niño del colegio, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:14:47.191,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6504,"[3] recordIndex=6, title=Sex, startDate=2022/04/29 13:00, endDate=2022/04/29 18:30, workFlow=3, description=Sex Hard Core, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:14:53.941,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6430,"[4] recordIndex=6, title=Recoger al niño, startDate=2022/04/29 13:00, endDate=2019/05/09 18:00, workFlow=0.5, description=Recoger al niño del colegio, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:15:00.5,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6293,"[5] recordIndex=6, title=Recoger al niño, startDate=2022/04/29 13:00, endDate=2022/04/29 14:30, workFlow=10, description=Recoger al niño del colegio, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:15:07.39,acme.testing.manager.task.ManagerMyTasksUpdateTest,updateNegative,6482,"[6] recordIndex=6, title=Recoger al niño, startDate=2022/04/29 13:00, endDate=2022/04/29 14:30, workFlow=-1, description=Recoger al niño del colegio, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:15:23.204,acme.testing.manager.task.ManagerMyTasksListTest,listPositive,6237,"[1] recordIndex=0, title=Hacer de comer, startDate=2021/06/09 15:55, endDate=2022/06/09 19:55, workFlow=4.00, description=Los niños tenian mucha hambre, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:15:29.711,acme.testing.manager.task.ManagerMyTasksListTest,listPositive,6219,"[2] recordIndex=1, title=Limpiar baños, startDate=2021/06/09 15:55, endDate=2022/06/15 19:55, workFlow=25.00, description=Cambiar toallas y limpiar WC, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:15:30.226,acme.testing.manager.task.ManagerMyTasksListTest,listNegative,228,"[1] username=null, password=null",OK
+2021-06-04 22:15:34.176,acme.testing.manager.task.ManagerMyTasksListTest,listNegative,3626,"[2] username=administrator, password=administrator",OK
+2021-06-04 22:15:50.865,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordUpdateTest,updatePositive,7282,"[1] recordIndex=0, spamword=prueba",OK
+2021-06-04 22:15:58.326,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordUpdateTest,updatePositive,7162,"[2] recordIndex=0, spamword=prueba2",OK
+2021-06-04 22:16:04.891,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordUpdateTest,updateNegative,6238,"[1] recordIndex=0, spamword=null",OK
+2021-06-04 22:16:05.44,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordUpdateTest,updateNegative,279,"[1] username=null, password=null",OK
+2021-06-04 22:16:09.314,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordUpdateTest,updateNegative,3583,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:16:25.064,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordCreateTest,createPositive,6071,"[1] recordIndex=0, spamword=prueba1",OK
+2021-06-04 22:16:31.33,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordCreateTest,createPositive,5980,"[2] recordIndex=0, spamword=prueba2",OK
+2021-06-04 22:16:36.436,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordCreateTest,createNegative,4835,"createNegative()",OK
+2021-06-04 22:16:37.028,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordCreateTest,listNegative,291,"[1] username=null, password=null",OK
+2021-06-04 22:16:41.013,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordCreateTest,listNegative,3659,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:16:55.658,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordDeleteTest,deletePositive,4968,"deletePositive()",OK
+2021-06-04 22:16:56.241,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordDeleteTest,deleteNegative,251,"[1] username=null, password=null",OK
+2021-06-04 22:17:00.141,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordDeleteTest,deleteNegative,3536,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:17:15.011,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listPositive,5270,"[1] recordIndex=0, spamword=duro",OK
+2021-06-04 22:17:20.602,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listPositive,5269,"[2] recordIndex=1, spamword=dura",OK
+2021-06-04 22:17:26.032,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listPositive,5144,"[3] recordIndex=2, spamword=has ganado",OK
+2021-06-04 22:17:31.472,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listPositive,5168,"[4] recordIndex=3, spamword=millon de dolares",OK
+2021-06-04 22:17:32.021,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listNegative,264,"[1] username=null, password=null",OK
+2021-06-04 22:17:35.876,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,listNegative,3533,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:17:39.619,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,filtroShoutPositive,3457,"filtroShoutPositive()",OK
+2021-06-04 22:17:41.941,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,filtroShoutNegative,1999,"filtroShoutNegative()",OK
+2021-06-04 22:17:50.577,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,filtroTaskPositive,8368,"[1] recordIndex=9, title=Ir a la joyeria, startDate=2022/06/09 17:30, endDate=2022/06/09 18:00, workFlow=0.00, description=LLevar el reloj a arreglar, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:17:59.176,acme.testing.administrator.spamfilter.spamword.AdministratorSpamwordListTest,filtroTaskPositive,8296,"[2] recordIndex=10, title=Hacer la compra, startDate=2022/06/09 18:10, endDate=2022/06/09 19:30, workFlow=0.00, description=Ir al mercadona a comprar huevos y filetes, publicTask=false, url=https://www.google.com",OK
+2021-06-04 22:18:10.479,acme.testing.anonymous.shout.AnonymousShoutListTest,listPositive,1696,"[1] recordIndex=0, author=Diego Rivera, text=Hoy es un gran dia., info=https://www.facebook.com, moment=2021/05/24 15:55",OK
+2021-06-04 22:18:12.445,acme.testing.anonymous.shout.AnonymousShoutListTest,listPositive,1655,"[2] recordIndex=1, author=Pablo Garcia, text=Esto es un shout., info=https://www.facebook.com, moment=2021/05/23 15:55",OK
+2021-06-04 22:18:16.376,acme.testing.anonymous.shout.AnonymousShoutListTest,listNegative,3611,"[1] username=administrator, password=administrator",OK
+2021-06-04 22:18:20.174,acme.testing.anonymous.shout.AnonymousShoutListTest,listNegative,3526,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:18:33.428,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,3524,"[1] recordIndex=0, author=Señor prueba, text=Hola soy una prueba, info=https://www.example.com",OK
+2021-06-04 22:18:35.803,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,2082,"[1] recordIndex=0, author=Señor prueba, text=Hola soy una prueba hard core, info=https://www.example.com",OK
+2021-06-04 22:18:38.095,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,2026,"[2] recordIndex=0, author=Aqui hay mas de 25 caracteres, text=Hola soy una prueba, info=https://www.example.com",OK
+2021-06-04 22:18:40.469,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,2116,"[3] recordIndex=0, author=Señor prueba, text=Hola soy una prueba pero debe tener mas de 100 caracteres por lo tanto hay que escribir mucho mas para poder saltar la validacion de forma exitosa, info=https://www.example.com",OK
+2021-06-04 22:18:42.767,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,2012,"[4] recordIndex=1, author=null, text=Hola soy una prueba, info=gsdfghdfg",OK
+2021-06-04 22:18:46.73,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,3675,"[1] username=administrator, password=administrator",OK
+2021-06-04 22:18:50.654,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createNegative,3618,"[2] username=manager2, password=manager2",OK
+2021-06-04 22:19:05.065,acme.testing.authenticated.manager.AuthenticatedManagerCreateTest,createPositive,4811,"createPositive()",OK
+2021-06-04 22:19:07.928,acme.testing.authenticated.manager.AuthenticatedManagerCreateTest,createNegative,2609,"createNegative()",OK
+2021-06-04 22:19:20.784,acme.testing.anonymous.task.AnonymousTaskListAllTest,listPositive,3166,"[1] recordIndex=0, title=Barrer la casa, startDate=2021/08/09 15:55, endDate=2022/08/09 18:55, workFlow=3.00, description=La casa estaba muy sucia, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:19:24.185,acme.testing.anonymous.task.AnonymousTaskListAllTest,listPositive,3080,"[2] recordIndex=1, title=Pintar la habitacion, startDate=2021/09/09 15:55, endDate=2022/09/09 16:55, workFlow=1.00, description=La pintura estaba gastada, publicTask=true, url=https://www.google.com",OK
+2021-06-04 22:19:27.98,acme.testing.anonymous.task.AnonymousTaskListAllTest,listNegative,3518,"[1] username=fervalnav, password=Qwerty123",OK
+2021-06-04 22:19:31.937,acme.testing.anonymous.task.AnonymousTaskListAllTest,listNegative,3639,"[2] username=administrator, password=administrator",OK
+2021-06-04 22:19:48.877,acme.testing.SignUpTest,createPositive,7305,"[1] username=johnny, password=johnny, name=Johnny, surname=López, email=john@mail.com",OK
+2021-06-04 22:19:56.291,acme.testing.SignUpTest,createPositive,7126,"[2] username=lorraine, password=lorraine, name=Lorraine, surname=Williams, email=lorraine@yellow-house.com",OK
+2021-06-04 22:20:03.638,acme.testing.SignUpTest,createPositive,7092,"[3] username=leslie, password=leslie, name=Leslie Marti, surname=Ramport, email=leslie@us.es",OK
+2021-06-04 22:20:10.909,acme.testing.SignUpTest,createPositive,6998,"[4] username=robert, password=robert, name=Robert, surname=Johnson, email=robert@mail.server.com",OK
+2021-06-04 22:20:18.347,acme.testing.SignUpTest,createPositive,7182,"[5] username=pepeluis, password=pepeluis, name=José Luis, surname=Sørensen, email=ppepe.sorensen@sweden.sw",OK
+2021-06-04 22:20:25.674,acme.testing.SignUpTest,createPositive,7038,"[6] username=luisa, password=luisa, name=Luisa, surname=Martínez López, email=luisa@luisa.name",OK
+2021-06-04 22:20:33.006,acme.testing.SignUpTest,createPositive,7078,"[7] username=lukas, password=lukas, name=Lukas, surname=Smith, email=lukas@mail.com",OK
+2021-06-04 22:20:40.505,acme.testing.SignUpTest,createPositive,7197,"[8] username=mary-dt, password=mary-dt, name=Mary, surname=Design-Testing, email=mary@email.com",OK
+2021-06-04 22:20:47.902,acme.testing.SignUpTest,createPositive,7125,"[9] username=jorge, password=jorge, name=Jorge, surname=Libertad, email=jorge@yahoo.com",OK
+2021-06-04 22:20:55.313,acme.testing.SignUpTest,createPositive,7096,"[10] username=sonia, password=sonia, name=Snojia Guðrún, surname=Þor-Anaïs, email=sonja@liberty.de",OK
+2021-06-04 22:21:02.664,acme.testing.SignUpTest,createPositive,7068,"[11] username=parker, password=parker, name=Parker Sigurður, surname=Mañón-Perigüeñez, email=parker@outlook.com",OK
+2021-06-04 22:21:09.968,acme.testing.SignUpTest,createPositive,7024,"[12] username=manolo, password=manolo, name=Manuel Raúl, surname=Benítez López, email=manolo@engineer.com",OK
+2021-06-04 22:21:12.721,acme.testing.SignUpTest,createNegative,2464,"[1] username=johnny, password=johnny, name=pepe, surname=Johnny, email=López, license=john@mail.com",OK
+2021-06-04 22:21:15.524,acme.testing.SignUpTest,createNegative,2548,"[2] username=lorraine, password=lorraine, name=lorraine, surname=Lorraine, email=Williams, license=lorraine",OK
+2021-06-04 22:21:18.265,acme.testing.SignUpTest,createNegative,2455,"[3] username=null, password=leslie, name=leslie, surname=Marti, email=Ramport, license=leslie@us.es",OK
+2021-06-04 22:21:21.06,acme.testing.SignUpTest,createNegative,2509,"[4] username=fer, password=fernando, name=fernando, surname=Fernando, email=Valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:23.9,acme.testing.SignUpTest,createNegative,2554,"[5] username=fernandovaldesnavarrofernandovaldesnavarrofernandovaldesnavarrofernandovaldesnavarro, password=fernando, name=fernando, surname=Fernnado, email=Valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:26.618,acme.testing.SignUpTest,createNegative,2430,"[6] username=fernando, password=null, name=null, surname=fernando, email=valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:29.356,acme.testing.SignUpTest,createNegative,2451,"[7] username=fernando, password=fer, name=fer, surname=fernando, email=valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:32.2,acme.testing.SignUpTest,createNegative,2588,"[8] username=fernando, password=fernandovaldesnavarrofernandovaldesnavarrofernandovaldesnavarro, name=fernandovaldesnavarrofernandovaldesnavarrofernandovaldesnavarro, surname=fernando, email=valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:35.0,acme.testing.SignUpTest,createNegative,2544,"[9] username=fernando, password=fernando, name=fernando, surname=null, email=valdes, license=fer@gmail.com",OK
+2021-06-04 22:21:37.791,acme.testing.SignUpTest,createNegative,2509,"[10] username=fernando, password=fernando, name=fernando, surname=fernando, email=null, license=fer@gmail.com",OK
+2021-06-04 22:21:40.689,acme.testing.SignUpTest,createNegative,2564,"[11] username=fernando, password=fernando, name=fernando, surname=fernando, email=valdes, license=null",OK
+2021-06-04 22:21:54.736,acme.testing.administrator.task.AdministratorTaskDashBoardTestCase,listPositive,4419,"[1] publicTasks=12, privateTasks=6, finishedTasks=6, nonFinishedTasks=12, averageWorkFlow=3.11, deviationWorkFlow=5.43, maxWorkFlow=25.00, minWorkFlow=1.00, averageExecutionPeriod=163.00, deviationExecutionPeriod=147.43, maxExecutionPeriod=372.00, minExecutionPeriod=0.00",OK
+2021-06-04 22:21:55.352,acme.testing.administrator.task.AdministratorTaskDashBoardTestCase,listNegative,316,"[1] username=null, password=null",OK
+2021-06-04 22:21:59.234,acme.testing.administrator.task.AdministratorTaskDashBoardTestCase,listNegative,3596,"[2] username=manager3, password=manager3",OK
+2021-06-04 22:22:13.135,acme.testing.authenticated.useraccount.AuthenticatedUserAccountShowTest,showPositive,4365,"[1] username=manager2, password=manager2, confirmation=manager2, name=Manager2, surname=Manager2, email=manager2@gmail.com",OK
+2021-06-04 22:22:13.711,acme.testing.authenticated.useraccount.AuthenticatedUserAccountShowTest,showNegative,297,"showNegative()",OK
+2021-06-04 22:22:29.998,acme.testing.authenticated.useraccount.AuthenticatedUserAccountUpdateTest,updatePositive,6644,"[1] password=carvilgar1, confirmation=carvilgar1, name=Carlos Jesus, surname=Villadiego Garcia, email=carvilgar1@alum.us.es",OK
+2021-06-04 22:22:35.857,acme.testing.authenticated.useraccount.AuthenticatedUserAccountUpdateTest,updateNegative,5558,"[1] password=carvilgar1, confirmation=error404, name=Carlos Jesus, surname=Villadiego Garcia, email=carvilgar1@alum.us.es",OK
+2021-06-04 22:22:41.424,acme.testing.authenticated.useraccount.AuthenticatedUserAccountUpdateTest,updateNegative,5296,"[2] password=null, confirmation=null, name=null, surname=null, email=null",OK
+2021-06-04 22:22:47.149,acme.testing.authenticated.useraccount.AuthenticatedUserAccountUpdateTest,updateNegative,5440,"[3] password=a, confirmation=a, name=Carlos Jesus, surname=Villadiego Garcia, email=carvilgar1@alum.us.es",OK
+2021-06-04 22:22:52.928,acme.testing.authenticated.useraccount.AuthenticatedUserAccountUpdateTest,updateNegative,5495,"[4] password=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, confirmation=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa, name=Carlos Jesus, surname=Villadiego Garcia, email=carvilgar1@alum.us.es",OK

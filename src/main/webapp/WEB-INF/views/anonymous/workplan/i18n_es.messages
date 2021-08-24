@@ -1,0 +1,8 @@
+anonymous.workplan.list.label.startDate = Fecha Inicial
+anonymous.workplan.list.label.endDate = Fecha Final
+anonymous.workplan.list.label.workLoad = Carga de Trabajo
+anonymous.workplan.list.label.publicPlan = Plan Publico
+anonymous.provider.form.button.return = Retorno
+anonymous.workplan.tasks.title = Titulo
+anonymous.workplan.tasks.description = Descripcion
+anonymous.workplan.tasks.workflow = Tiempo trabajado

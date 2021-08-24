@@ -1,0 +1,8 @@
+anonymous.workplan.list.label.startDate = Start Date
+anonymous.workplan.list.label.endDate = End Date
+anonymous.workplan.list.label.workLoad = Workload
+anonymous.workplan.list.label.publicPlan = Public Plan
+anonymous.provider.form.button.return = Return
+anonymous.workplan.tasks.title = Title
+anonymous.workplan.tasks.description = Description
+anonymous.workplan.tasks.workflow = Workflow

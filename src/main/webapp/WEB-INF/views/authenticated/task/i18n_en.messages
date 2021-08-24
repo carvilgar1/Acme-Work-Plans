@@ -1,0 +1,9 @@
+authenticated.task.list.label.title = Title
+authenticated.task.list.label.startDate = Start Date
+authenticated.task.list.label.endDate = End Date
+authenticated.task.list.label.workFlow = Work Flow
+authenticated.task.list.label.description = Description
+authenticated.task.list.label.publicTask = Public Task
+authenticated.task.list.label.id = ID
+authenticated.task.list.label.url=URL
+authenticated.provider.form.button.return = Return

@@ -1,0 +1,34 @@
+manager.workplan.list.label.startDate= Fecha Inicio
+manager.workplan.list.label.endDate= Fecha Fin
+manager.workplan.list.label.workLoad= Tiempo de trabajo
+
+manager.workplan.form.label.startDate= Fecha Inicio
+manager.workplan.form.label.endDate= Fecha Fin
+manager.workplan.form.label.workLoad= Tiempo de trabajo
+manager.workplan.form.label.publicPlan= ¿Es publico?
+manager.workplan.form.button.create= Crear
+manager.workplan.form.button.delete= Borrar
+manager.workplan.form.button.return= Volver
+manager.workplan.form.button.update= Actualizar
+manager.workplan.form.button.publish= Publicar
+manager.workplan.form.addTask= Añadir Tarea
+manager.workplan.form.button.addTask= Añadir
+manager.workpla.form.public.true=Visibilidad: Publico
+manager.workpla.form.public.false=Visibilidad: Privado
+
+
+manager.workplan.error.dates = La fecha de fin debe ser después de la fecha de inicio
+manager.workplan.error.startDate = La fecha inicial debe ser posterior a la fecha actual
+manager.workplan.error.endDate = La fecha final debe ser posterior a la fecha actual
+manager.workplan.error.arentPublic= Alguna tarea es privada
+manager.workplan.error.taskPrivate=No se puede añadir una tarea privada a un plan de trabajo publico
+manager.workplan.error.differentManager= No se puede añadir una tarea de otro manager
+manager.workplan.error.startDate.task=Fecha inicio del plan de trabajo tiene que ser anterior a la primera fecha incial de sus tareas
+manager.workplan.error.endDate.task=Fecha fin del plan de trabajo tiene que ser despues de la ultima fecha fin de sus tareas
+manager.workplan.error.taskStarted=La tarea ya esta empezada
+
+manager.workplan.message.recommend =Recomendamos: 
+
+manager.workplan.tasks.title= Titulo
+manager.workplan.tasks.description= Descripcion
+manager.workplan.tasks.workflow= Carga de trabajo
