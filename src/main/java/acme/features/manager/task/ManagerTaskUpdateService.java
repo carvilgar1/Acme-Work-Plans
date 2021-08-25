@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spamfilter.spamword.AdministratorSpamwordListService;
@@ -47,7 +48,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert entity!=null;
 		assert model!=null;
 				
-		request.unbind(entity, model, "title","startDate","endDate","workFlow","description","publicTask", "url");
+		request.unbind(entity, model, "title","startDate","endDate","workFlow.entera","workFlow.decimal","description","publicTask", "url");
 		
 	}
 
@@ -71,12 +72,12 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final Boolean b1 = this.workFlowValidation(entity);
 			final Boolean b3 = this.validacionFechas(entity);
 			errors.state(request, b3, "endDate", "manager.mytasks.error.dates");
-			errors.state(request, b1, "workFlow", "manager.mytasks.error.workFlow");
+			errors.state(request, b1, "workFlow.decimal", "manager.mytasks.error.workFlow");
 		}
-		if(entity.getStartDate()!=null) {
-			final Boolean b1 = this.fechaInicialDespuesFechaActual(entity);
-			errors.state(request, b1, "startDate", "manager.mytasks.error.startDate");
-		}
+//		if(entity.getStartDate()!=null) {
+//			final Boolean b1 = this.fechaInicialDespuesFechaActual(entity);
+//			errors.state(request, b1, "startDate", "manager.mytasks.error.startDate");
+//		}
 		if(entity.getEndDate()!=null) {
 			final Boolean b2 = this.fechaFinalDespuesFechaActual(entity);
 			errors.state(request, b2, "endDate", "manager.mytasks.error.endDate");
@@ -96,14 +97,14 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		return b;
 	}
 	
-	public Boolean fechaInicialDespuesFechaActual(final Task task) {
-		if(task.getStartDate()!=null) {
-			final Date actual = new Date(System.currentTimeMillis()-1);
-			return task.getStartDate().after(actual);
-		} else {
-			return false;
-		}
-	}
+//	public Boolean fechaInicialDespuesFechaActual(final Task task) {
+//		if(task.getStartDate()!=null) {
+//			final Date actual = new Date(System.currentTimeMillis()-1);
+//			return task.getStartDate().after(actual);
+//		} else {
+//			return false;
+//		}
+//	}
 	
 	public Boolean fechaFinalDespuesFechaActual(final Task task) {
 		final Date actual = new Date(System.currentTimeMillis()-1);
@@ -111,9 +112,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	}
 	
 	private Boolean workFlowValidation(final Task entity) {
-		final Double taskWorkFlow = entity.getWorkFlow();
+		final WorkLoad taskWorkFlow = entity.getWorkFlow();
 		final long diff = entity.getEndDate().getTime() - entity.getStartDate().getTime();
-		final long workFlowMs = (long)(taskWorkFlow * 3600000);
+		final long workFlowMs = (long)(taskWorkFlow.getValorDecimal() * 3600000);
 		if(workFlowMs > diff) {
 			return false;
 		}else {
@@ -128,14 +129,14 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		String title;
 		Date endDate;
-		Double workFlow;
+		WorkLoad workFlow;
 		String description;
 		Boolean publicTask;
 		String url;
 		
 		title = request.getModel().getString("title");
 		endDate =request.getModel().getDate("endDate");
-		workFlow = request.getModel().getDouble("workFlow");
+		workFlow = entity.getWorkFlow();
 		description = request.getModel().getString("description");
 		publicTask = request.getModel().getBoolean("publicTask");
 		url = request.getModel().getString("url");

@@ -29,16 +29,16 @@ public interface AdministratorDashBoardRepository extends AbstractRepository{
 	@Query("SELECT COUNT(t) FROM Task t WHERE t.publicTask = FALSE")
 	Integer numberOfNonPublicTasks();
 	
-	@Query("SELECT AVG(t.workFlow) FROM Task t")
+	@Query("SELECT AVG(t.workFlow.entera+0.1*t.workFlow.decimal) FROM Task t")
 	Double averageWorkFlow();
 	
 //	@Query("SELECT SUM((t.workFlow - :avg) * (t.workFlow - :avg)) FROM Task t")
 //	Double deviationWorkFlow(@Param("avg") double avg);
 	
-	@Query("SELECT MAX(t.workFlow) FROM Task t")
+	@Query("SELECT MAX(t.workFlow.entera+0.1*t.workFlow.decimal) FROM Task t")
 	Double maxWorkFlow();
 	
-	@Query("SELECT MIN(t.workFlow) FROM Task t")
+	@Query("SELECT MIN(t.workFlow.entera+0.1*t.workFlow.decimal) FROM Task t")
 	Double minWorkFlow();
 	
 	@Query("SELECT ABS(FUNCTION('DATEDIFF', t.startDate, t.endDate)) FROM Task t")

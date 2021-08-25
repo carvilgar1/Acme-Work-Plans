@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spamfilter.spamword.AdministratorSpamwordListService;
@@ -52,7 +53,9 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 	public Task instantiate(final Request<Task> request) {
 		assert request != null;
 		Task task;
-		final Double workFlow = 0.0;
+		final WorkLoad workFlow = new WorkLoad();
+		workFlow.setEntera(0);
+		workFlow.setDecimal(0);
 		final Boolean publicTask = false;
 		task = new Task();
 		task.setWorkFlow(workFlow);
@@ -113,7 +116,9 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		assert request!=null;
 		assert entity!=null;
 		
-		final Double workFlow = 0.0;
+		final WorkLoad workFlow = new WorkLoad();
+		workFlow.setEntera(0);
+		workFlow.setDecimal(0);
 		final Boolean publicTask = false;
 		final Manager manager;
 		final int id = request.getPrincipal().getActiveRoleId();
