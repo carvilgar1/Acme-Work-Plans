@@ -68,7 +68,8 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		if(entity.getEndDate()!=null && entity.getStartDate()!=null && entity.getWorkFlow()!=null) {
+		if(entity.getEndDate()!=null && entity.getStartDate()!=null 
+			&& entity.getWorkFlow().getEntera()!=null && entity.getWorkFlow().getDecimal()!=null) {
 			final Boolean b1 = this.workFlowValidation(entity);
 			final Boolean b3 = this.validacionFechas(entity);
 			errors.state(request, b3, "endDate", "manager.mytasks.error.dates");
