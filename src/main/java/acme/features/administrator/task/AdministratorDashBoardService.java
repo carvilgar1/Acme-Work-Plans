@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.dashboard.Dashboard;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -59,16 +60,20 @@ public class AdministratorDashBoardService implements AbstractListService<Admini
 			test.setPrivateTasks(this.repository.numberOfNonPublicTasks());
 			test.setFinishedTasks(this.repository.numberOfFinishedTasks());
 			test.setNonFinishedTasks(this.repository.numberOfNonFinishedTasks());
-			
-			test.setAverageWorkFlow(this.repository.averageWorkFlow());
-			test.setDeviationWorkFlow(Dashboard.deviation(this.repository.findAllWorkFlows()));
-			test.setMaxWorkFlow(this.repository.maxWorkFlow());
-			test.setMinWorkFlow(this.repository.minWorkFlow());
+
+			final WorkLoad wltest = new WorkLoad();
+			wltest.setEntera(3);
+			wltest.setDecimal(30);
+			test.setAverageWorkFlow(Dashboard.average(this.repository.findAllWorkFlows()).toString());
+			test.setDeviationWorkFlow(wltest.toString());
+			test.setMaxWorkFlow(Dashboard.max(this.repository.findAllWorkFlows()).toString());
+			test.setMinWorkFlow(Dashboard.min(this.repository.findAllWorkFlows()).toString());
 			
 			test.setAverageExecutionPeriod(this.repository.averagePeriod());
-			test.setDeviationExecutionPeriod(Dashboard.deviation(this.repository.findAllPeriods()));
+			test.setDeviationExecutionPeriod(null);//Dashboard.deviation(this.repository.findAllPeriods()));
 			test.setMaxExecutionPeriod(this.repository.maxPeriod());
 			test.setMinExecutionPeriod(this.repository.minPeriod());
+
 			
 			r.add(test);
 		}else{
@@ -80,10 +85,10 @@ public class AdministratorDashBoardService implements AbstractListService<Admini
 			test.setFinishedTasks(0);
 			test.setNonFinishedTasks(0);
 			
-			test.setAverageWorkFlow(0.);
-			test.setDeviationWorkFlow(0.);
-			test.setMaxWorkFlow(0.);
-			test.setMinWorkFlow(0.);
+			test.setAverageWorkFlow("nothing");
+			test.setDeviationWorkFlow("nothing");
+			test.setMaxWorkFlow("nothing");
+			test.setMinWorkFlow("nothing");
 			
 			test.setAverageExecutionPeriod(0.);
 			test.setDeviationExecutionPeriod(0.);

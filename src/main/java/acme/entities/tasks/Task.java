@@ -41,7 +41,6 @@ public class Task extends DomainEntity{
 		@NotNull
 		private Date endDate;
 		
-		@NotNull
 		@Valid
 		private WorkLoad workFlow;
 		
