@@ -3,6 +3,7 @@ package acme.features.anonymous.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -39,7 +40,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOnePublicTasksNonFinished(id);
-		
+		result.setWorkFlow(WorkLoad.workLoadOfDouble(result.getWorkFlowDigits()));
 		return result;
 	}
 

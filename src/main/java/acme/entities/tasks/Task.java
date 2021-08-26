@@ -8,6 +8,7 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -41,9 +42,13 @@ public class Task extends DomainEntity{
 		@NotNull
 		private Date endDate;
 		
-		@NotNull
+		@Transient
 		@Valid
 		private WorkLoad workFlow;
+		
+		@NotNull
+		@Digits(integer = 2, fraction = 2)
+		private Double workFlowDigits;
 		
 		@NotBlank
 		@Size(max = 500)
@@ -62,7 +67,6 @@ public class Task extends DomainEntity{
 			now = new Date(System.currentTimeMillis());
 			return this.endDate.after(now);
 		}
-
 		
 		// Relationships
 		@Valid
