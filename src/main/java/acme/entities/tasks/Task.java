@@ -8,7 +8,6 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -42,12 +41,9 @@ public class Task extends DomainEntity{
 		@NotNull
 		private Date endDate;
 		
-		@Transient
+		@NotNull
 		@Valid
 		private WorkLoad workFlow;
-    
-    @NotNull
-		private Integer workFlowMinutes;
 		
 		@NotBlank
 		@Size(max = 500)

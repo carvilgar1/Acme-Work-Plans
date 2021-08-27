@@ -118,21 +118,21 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		String title;
 		Date endDate;
-		Integer workFlow;
+		WorkLoad workFlow;
 		String description;
 		Boolean publicTask;
 		String url;
 		
 		title = request.getModel().getString("title");
 		endDate =request.getModel().getDate("endDate");
-		workFlow = entity.getWorkFlow().getMinutes();
+		workFlow = entity.getWorkFlow();
 		description = request.getModel().getString("description");
 		publicTask = request.getModel().getBoolean("publicTask");
 		url = request.getModel().getString("url");
 		
 		entity.setTitle(title);
 		entity.setEndDate(endDate);
-		entity.setWorkFlowMinutes(workFlow);
+		entity.setWorkFlow(workFlow);
 		entity.setDescription(description);
 		entity.setPublicTask(publicTask);
 		entity.setUrl(url);

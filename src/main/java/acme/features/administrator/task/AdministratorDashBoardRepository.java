@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.tasks.Task;
 import acme.framework.repositories.AbstractRepository;
 
@@ -14,8 +15,8 @@ public interface AdministratorDashBoardRepository extends AbstractRepository{
 	@Query("SELECT t FROM Task t")
 	Collection<Task> findAllTasks();
 	
-	@Query("SELECT t.workFlowMinutes FROM Task t")
-	Collection<Double> findAllWorkFlows();
+	@Query("SELECT t.workFlow FROM Task t")
+	Collection<WorkLoad> findAllWorkLoads();
 	
 	@Query("SELECT COUNT(t) FROM Task t WHERE t.endDate >= CURRENT_DATE")
 	Integer numberOfNonFinishedTasks();
@@ -29,14 +30,14 @@ public interface AdministratorDashBoardRepository extends AbstractRepository{
 	@Query("SELECT COUNT(t) FROM Task t WHERE t.publicTask = FALSE")
 	Integer numberOfNonPublicTasks();
 	
-	@Query("SELECT AVG(t.workFlowMinutes) FROM Task t")
+	@Query("SELECT AVG(t.workFlow.entera*60 + t.workFlow.decimal) FROM Task t")
 	Double averageWorkFlow();
 	
-	@Query("SELECT MAX(t.workFlowMinutes) FROM Task t")
-	Double maxWorkFlow();
+	@Query("SELECT MAX(t.workFlow) FROM Task t")
+	WorkLoad maxWorkFlow();
 	
-	@Query("SELECT MIN(t.workFlowMinutes) FROM Task t")
-	Double minWorkFlow();
+	@Query("SELECT MIN(t.workFlow) FROM Task t")
+	WorkLoad minWorkFlow();
 	
 	@Query("SELECT ABS(FUNCTION('DATEDIFF', t.startDate, t.endDate)) FROM Task t")
 	Collection<Double> findAllPeriods();

@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.WorkLoad;
 import acme.entities.dashboard.Dashboard;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -61,11 +60,10 @@ public class AdministratorDashBoardService implements AbstractListService<Admini
 			test.setFinishedTasks(this.repository.numberOfFinishedTasks());
 			test.setNonFinishedTasks(this.repository.numberOfNonFinishedTasks());
 
-			test.setAverageWorkFlow(WorkLoad.ofMinutes(this.repository.averageWorkFlow()).toString());
-			test.setDeviationWorkFlow(WorkLoad.ofMinutes(Dashboard.deviation(
-				this.repository.findAllWorkFlows())).toString());
-			test.setMaxWorkFlow(WorkLoad.ofMinutes(this.repository.maxWorkFlow()).toString());
-			test.setMinWorkFlow(WorkLoad.ofMinutes(this.repository.minWorkFlow()).toString());
+			test.setAverageWorkFlow("");
+			test.setDeviationWorkFlow("");
+			test.setMaxWorkFlow(Dashboard.max(this.repository.findAllWorkLoads()).toString());
+			test.setMinWorkFlow(Dashboard.min(this.repository.findAllWorkLoads()).toString());
 			
 			test.setAverageExecutionPeriod(this.repository.averagePeriod());
 			test.setDeviationExecutionPeriod(Dashboard.deviation(this.repository.findAllPeriods()));
