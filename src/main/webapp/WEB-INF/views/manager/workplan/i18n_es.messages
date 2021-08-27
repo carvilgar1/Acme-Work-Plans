@@ -1,10 +1,12 @@
 manager.workplan.list.label.startDate= Fecha Inicio
 manager.workplan.list.label.endDate= Fecha Fin
-manager.workplan.list.label.workLoad= Tiempo de trabajo
+manager.workplan.list.label.workLoad.entera = Horas
+manager.workplan.list.label.workLoad.decimal = Minutos
 
 manager.workplan.form.label.startDate= Fecha Inicio
 manager.workplan.form.label.endDate= Fecha Fin
-manager.workplan.form.label.workLoad= Tiempo de trabajo
+manager.workplan.form.label.workLoad.entera = Horas
+manager.workplan.form.label.workLoad.decimal = Minutos
 manager.workplan.form.label.publicPlan= ¿Es publico?
 manager.workplan.form.button.create= Crear
 manager.workplan.form.button.delete= Borrar
@@ -31,4 +33,5 @@ manager.workplan.message.recommend =Recomendamos:
 
 manager.workplan.tasks.title= Titulo
 manager.workplan.tasks.description= Descripcion
-manager.workplan.tasks.workflow= Carga de trabajo
+manager.workplan.tasks.workflow.entera = Horas
+manager.workplan.tasks.workflow.decimal = Minutos 

@@ -51,7 +51,7 @@ public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manag
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "startDate", "endDate", "workLoad", "publicPlan", "tasks");
+		request.unbind(entity, model, "startDate", "endDate", "workLoad.entera", "workLoad.decimal", "publicPlan", "tasks");
 		
 	}
 

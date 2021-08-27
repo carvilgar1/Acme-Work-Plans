@@ -20,6 +20,7 @@ manager.mytasks.error.endDate = La fecha final debe ser posterior a la fecha act
 manager.mytasks.error.workFlow = El flujo de trabajo debe ser menor o igual a las horas entre la fecha de inicio y fin
 manager.mytasks.error.endDateNull = Las fechas no pueden estar vacías
 manager.mytasks.error.spam = Esta tarea contiene palabras spam
+manager.mytasks.error.hours = No puede mayor que 99
 
 manager.mytasks.form.button.update = Actualizar tarea!
 manager.mytasks.form.button.create = Crear tarea!

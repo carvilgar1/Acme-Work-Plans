@@ -29,7 +29,7 @@ public class ManagerWorkPlanListService implements AbstractListService<Manager, 
 		assert entity!=null;
 		assert model!=null;
 		
-		request.unbind(entity, model, "startDate", "endDate", "workLoad");
+		request.unbind(entity, model, "startDate", "endDate", "workLoad.entera", "workLoad.decimal");
 	}
 
 	@Override

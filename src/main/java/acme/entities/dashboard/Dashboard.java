@@ -6,7 +6,6 @@ import java.util.function.DoubleUnaryOperator;
 import javax.persistence.Entity;
 import javax.persistence.Transient;
 
-import acme.datatypes.WorkLoad;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -40,13 +39,6 @@ public class Dashboard extends DomainEntity{
 			return Math.sqrt(data.stream().mapToDouble(f::applyAsDouble).sum()/n);
 		}
 		
-		public static WorkLoad min(final Collection<WorkLoad> data) {
-			return data.stream().min(WorkLoad::compareTo).orElseGet(null);
-		}
-		
-		public static WorkLoad max(final Collection<WorkLoad> data) {
-			return data.stream().max(WorkLoad::compareTo).orElseGet(null);
-		}
 		// Derived atttributes ----------------------------------------------------
 
 		@Override

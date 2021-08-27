@@ -19,6 +19,7 @@ manager.mytasks.error.endDate = End date must be later current date
 manager.mytasks.error.endDateNull = Dates can not be empty
 manager.mytasks.error.workFlow = Work flow must be equal or lowar than hours between start and end dates
 manager.mytasks.error.spam = This task contains spam words
+manager.mytasks.error.hours = Can't be higher than 99
 
 manager.mytasks.form.button.update = Update task!
 manager.mytasks.form.button.create = Create task!

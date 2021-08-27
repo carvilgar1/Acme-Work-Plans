@@ -11,9 +11,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.entities.DomainEntity;
@@ -38,8 +38,9 @@ public class Workplan extends DomainEntity{
 			@NotNull
 			private Date endDate;
 			
-			@Min(0)
-			private Double workLoad;
+			@NotNull
+			@Valid
+			private WorkLoad workLoad;
 			
 			@NotNull
 			private Boolean publicPlan;
@@ -123,7 +124,7 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
-	//			this.workLoad=this.tasks.stream().mapToDouble(Task::getWorkFlow).sum();
+				this.tasks.stream().map(Task::getWorkFlow).forEach(x->this.workLoad.addWorkLoad(x));
 			}
   
 			public boolean canUpdate() {

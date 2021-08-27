@@ -37,6 +37,20 @@ public class WorkLoad extends DomainDatatype implements Comparable<WorkLoad>{
 		return this.entera*60 + this.decimal;
 	}
 	
+	public void addWorkLoad(final WorkLoad o) {
+		final Integer horas = this.getEntera() + o.getEntera() + o.getDecimal()/60;
+		final Integer minutos = this.getDecimal() + o.getDecimal()%60;
+		this.setEntera(horas);
+		this.setDecimal(minutos);
+	}
+	
+	public void removeWorkLoad(final WorkLoad o) {
+		final Integer horas = this.getEntera() - o.getEntera() - o.getDecimal()/60;
+		final Integer minutos = this.getDecimal() - o.getDecimal()%60;
+		this.setEntera(horas);
+		this.setDecimal(minutos);
+	}
+	
 	public static WorkLoad ofMinutes(final double minutes) {
 		final WorkLoad r = new WorkLoad();
 		r.setEntera((int)minutes/60);

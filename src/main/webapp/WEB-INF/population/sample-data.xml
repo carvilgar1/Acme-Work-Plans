@@ -162,6 +162,26 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  		<property name="decimal" value="30"/>
  	</bean>
  	
+ 	<bean id="workload8" class="acme.datatypes.WorkLoad">
+ 		<property name="entera" value="2"/>
+ 		<property name="decimal" value="30"/>
+ 	</bean>
+ 	
+ 	<bean id="workload9" class="acme.datatypes.WorkLoad">
+ 		<property name="entera" value="26"/>
+ 		<property name="decimal" value="0"/>
+ 	</bean>
+ 	
+ 	<bean id="workload10" class="acme.datatypes.WorkLoad">
+ 		<property name="entera" value="5"/>
+ 		<property name="decimal" value="0"/>
+ 	</bean>
+ 	
+ 	<bean id="workload11" class="acme.datatypes.WorkLoad">
+ 		<property name="entera" value="0"/>
+ 		<property name="decimal" value="0"/>
+ 	</bean>
+ 	
  <!--  ################### TASKS ################### -->
 	<bean id="task1" class="acme.entities.tasks.Task">
 		<property name="title" value="Barrer la casa"/>
@@ -339,7 +359,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan1" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/05/29 13:00"/>
  		<property name="endDate" value="2021/05/29 14:30"/>
- 		<property name="workLoad" value="2.5"/>
+ 		<property name="workLoad" ref="workload8"/>
  		<property name="publicPlan" value="false"/>
  		<property name="manager" ref="manager3"/>
  		<property name="tasks">
@@ -353,7 +373,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan2" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/05/30 15:00"/>
  		<property name="endDate" value="2021/05/30 18:30"/>
- 		<property name="workLoad" value="4.0"/>
+ 		<property name="workLoad" ref="workload2"/>
  		<property name="publicPlan" value="false"/>
  		<property name="manager" ref="manager3"/>
  		<property name="tasks">
@@ -367,7 +387,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan3" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/07/30 10:00"/>
  		<property name="endDate" value="2021/07/30 11:30"/>
- 		<property name="workLoad" value="26.0"/>
+ 		<property name="workLoad" ref="workload9"/>
  		<property name="publicPlan" value="true"/>
  		<property name="manager" ref="manager2"/>
  		<property name="tasks">
@@ -381,7 +401,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan4" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/08/12 12:00"/>
  		<property name="endDate" value="2021/08/12 15:00"/>
- 		<property name="workLoad" value="2.0"/>
+ 		<property name="workLoad" ref="workload5"/>
  		<property name="publicPlan" value="true"/>
  		<property name="manager" ref="manager2"/>
  		<property name="tasks">
@@ -395,7 +415,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan5" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/05/10 15:00"/>
  		<property name="endDate" value="2021/05/10 18:30"/>
- 		<property name="workLoad" value="2.0"/>
+ 		<property name="workLoad" ref="workload5"/>
  		<property name="publicPlan" value="true"/>
  		<property name="manager" ref="manager2"/>
  		<property name="tasks">
@@ -409,7 +429,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan6" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/12/30 15:00"/>
  		<property name="endDate" value="2021/12/30 18:30"/>
- 		<property name="workLoad" value="2.0"/>
+ 		<property name="workLoad" ref="workload5"/>
  		<property name="publicPlan" value="false"/>
 
  		<property name="manager" ref="manager3"/>
@@ -424,7 +444,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan7" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/09/18 20:00"/>
  		<property name="endDate" value="2021/09/18 22:30"/>
- 		<property name="workLoad" value="5.0"/>
+ 		<property name="workLoad" ref="workload10"/>
  		<property name="publicPlan" value="true"/>
  		<property name="manager" ref="manager3"/>
  		<property name="tasks">
@@ -438,7 +458,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
  	<bean id="workplan8" class="acme.entities.workplans.Workplan">
  		<property name="startDate" value="2021/05/01 20:00"/>
  		<property name="endDate" value="2021/08/28 22:30"/>
- 		<property name="workLoad" value="0.0"/>
+ 		<property name="workLoad" ref="workload11"/>
  		<property name="publicPlan" value="false"/>
  		<property name="manager" ref="manager2"/>
  		
