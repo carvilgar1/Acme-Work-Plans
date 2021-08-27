@@ -42,7 +42,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		final int id = request.getModel().getInteger("id");
 		Task result;
 		result = this.repository.findTaskById(id);
-		result.setWorkFlow(WorkLoad.workLoadOfDouble(result.getWorkFlowDigits()));
+		result.setWorkFlow(WorkLoad.ofMinutes(result.getWorkFlowMinutes()));
 		return result;
 	}
 }

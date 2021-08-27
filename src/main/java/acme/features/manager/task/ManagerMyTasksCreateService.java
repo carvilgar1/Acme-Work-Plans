@@ -54,7 +54,7 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		Task task;
 		final Boolean publicTask = false;
 		task = new Task();
-		task.setWorkFlowDigits(0.0);
+		task.setWorkFlowMinutes(0);
 		task.setPublicTask(publicTask);
 		return task;
 	}
@@ -117,7 +117,7 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		final int id = request.getPrincipal().getActiveRoleId();
 		manager = this.managerRepo.findManagerById(id);
 		
-		entity.setWorkFlowDigits(0.0);
+		entity.setWorkFlowMinutes(0);
 		entity.setPublicTask(publicTask);
 		entity.setManager(manager);
 		this.repository.save(entity);

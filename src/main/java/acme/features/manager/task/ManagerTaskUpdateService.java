@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spamfilter.spamword.AdministratorSpamwordListService;
@@ -100,7 +101,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	}
 	
 	private Boolean workFlowValidation(final Task entity) {
-		final Double taskWorkFlow = entity.getWorkFlow().getValorEnHoras();
+		final WorkLoad taskWorkFlow = entity.getWorkFlow();
 		final long diff = entity.getEndDate().getTime() - entity.getStartDate().getTime();
 		final long workFlowMs = taskWorkFlow.getMilliseconds();
 		if(workFlowMs > diff) {
@@ -117,21 +118,21 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		String title;
 		Date endDate;
-		Double workFlow;
+		Integer workFlow;
 		String description;
 		Boolean publicTask;
 		String url;
 		
 		title = request.getModel().getString("title");
 		endDate =request.getModel().getDate("endDate");
-		workFlow = entity.getWorkFlow().getValorDecimal();
+		workFlow = entity.getWorkFlow().getMinutes();
 		description = request.getModel().getString("description");
 		publicTask = request.getModel().getBoolean("publicTask");
 		url = request.getModel().getString("url");
 		
 		entity.setTitle(title);
 		entity.setEndDate(endDate);
-		entity.setWorkFlowDigits(workFlow);
+		entity.setWorkFlowMinutes(workFlow);
 		entity.setDescription(description);
 		entity.setPublicTask(publicTask);
 		entity.setUrl(url);
