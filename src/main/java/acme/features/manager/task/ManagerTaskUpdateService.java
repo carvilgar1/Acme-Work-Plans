@@ -67,7 +67,6 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
 		if(entity.getEndDate()!=null && entity.getStartDate()!=null 
 			&& entity.getWorkFlow().getEntera()!=null && entity.getWorkFlow().getDecimal()!=null) {
 			final Boolean b1 = this.workFlowValidation(entity);
@@ -103,7 +102,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 	private Boolean workFlowValidation(final Task entity) {
 		final Double taskWorkFlow = entity.getWorkFlow().getValorEnHoras();
 		final long diff = entity.getEndDate().getTime() - entity.getStartDate().getTime();
-		final long workFlowMs = (long)(taskWorkFlow * 3600000);
+		final long workFlowMs = taskWorkFlow.getMilliseconds();
 		if(workFlowMs > diff) {
 			return false;
 		}else {

@@ -24,16 +24,19 @@ public class WorkLoad{
 	public Double getValorDecimal() {
 		return this.entera + 0.01*this.decimal;
 	}
-	
-	public Double getValorEnHoras() {
-		return this.entera + (double)this.decimal/60;
+
+	public long getMilliseconds() {
+		return this.entera*3600000l + this.decimal*60000l;
 	}
 	
-	public static WorkLoad workLoadOfDouble(final Double d) {
+	public Integer getMinutes() {
+		return this.entera*60 + this.decimal;
+	}
+	
+	public static WorkLoad ofMinutes(final double minutes) {
 		final WorkLoad r = new WorkLoad();
-		final String[] values = String.format("%,.2f", d).split("\\.");
-		r.setEntera(Integer.valueOf(values[0]));
-		r.setDecimal(Integer.valueOf(values[1]));
+		r.setEntera((int)minutes/60);
+		r.setDecimal((int)minutes%60);
 		return r;
 	}
 	
@@ -42,14 +45,11 @@ public class WorkLoad{
 		StringBuilder result;
 
 		result = new StringBuilder();
-		result.append(this.entera);
-		result.append(".");
-		result.append(this.decimal);
+		result.append(String.format("%02d", this.entera));
+		result.append(":");
+		result.append(String.format("%02d", this.decimal));
 
 		return result.toString();
-	}
-	
-	
-	
+	}	
 	
 }

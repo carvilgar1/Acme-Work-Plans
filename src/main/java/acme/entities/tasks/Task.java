@@ -45,10 +45,9 @@ public class Task extends DomainEntity{
 		@Transient
 		@Valid
 		private WorkLoad workFlow;
-		
-		@NotNull
-		@Digits(integer = 2, fraction = 2)
-		private Double workFlowDigits;
+    
+    @NotNull
+		private Integer workFlowMinutes;
 		
 		@NotBlank
 		@Size(max = 500)

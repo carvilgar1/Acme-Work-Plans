@@ -131,7 +131,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Barrer la casa"/>
 		<property name="startDate" value="2021/08/09 15:55"/>
 		<property name="endDate" value="2022/08/09 18:55"/>
-		<property name="workFlowDigits" value="4.0"/>
+		<property name="workFlowDigits" value="180"/>
 		<property name="description" value="La casa estaba muy sucia"/>
 		<property name="publicTask" value="true"/>
 		<property name="url" value="https://www.google.com"/>
@@ -142,7 +142,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Hacer de comer"/>
 		<property name="startDate" value="2021/06/09 15:55"/>
 		<property name="endDate" value="2022/06/09 19:55"/>
-		<property name="workFlowDigits" value="3.0"/>
+		<property name="workFlowMinutes" value="240"/>
 		<property name="description" value="Los niños tenian mucha hambre"/>
 		<property name="publicTask" value="false"/>
 		<property name="url" value="https://www.google.com"/>
@@ -152,7 +152,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Pintar la habitacion"/>
 		<property name="startDate" value="2021/09/09 15:55"/>
 		<property name="endDate" value="2022/09/09 16:55"/>
-		<property name="workFlowDigits" value="2.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="La pintura estaba gastada"/>
 		<property name="publicTask" value="true"/>
 		<property name="url" value="https://www.google.com"/>
@@ -163,7 +163,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Pintar el coche"/>
 		<property name="startDate" value="2021/03/09 15:55"/>
 		<property name="endDate" value="2021/03/09 16:55"/>
-		<property name="workFlowDigits" value="1.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="La pintura estaba gastada"/>
 		<property name="publicTask" value="true"/>
 		<property name="url" value="https://www.google.com"/>
@@ -173,7 +173,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Limpiar baños"/>
 		<property name="startDate" value="2021/06/09 15:55"/>
 		<property name="endDate" value="2022/06/15 19:55"/>
-		<property name="workFlowDigits" value="4.0"/>
+    <property name="workFlowMinutes" value="1500"/>
 		<property name="description" value="Cambiar toallas y limpiar WC"/>
 		<property name="publicTask" value="true"/>
 		<property name="url" value="https://www.google.com"/>
@@ -184,7 +184,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Hacer tareas DP2"/>
 		<property name="startDate" value="2021/05/04 15:55"/>
 		<property name="endDate" value="2022/05/05 18:00"/>
-		<property name="workFlowDigits" value="3.0"/>
+    <property name="workFlowMinutes" value="300"/>
 		<property name="description" value="Hacer delete de tasks"/>
 		<property name="publicTask" value="false"/>
 		<property name="manager" ref="manager2"/>
@@ -193,7 +193,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Hacer la compra"/>
 		<property name="startDate" value="2021/06/04 16:00"/>
 		<property name="endDate" value="2022/06/04 18:00"/>
-		<property name="workFlowDigits" value="2.0"/>
+    <property name="workFlowMinutes" value="120"/>
 		<property name="description" value="Ir al mercadona a por cocacola y por yogur"/>
 		<property name="publicTask" value="false"/>
 		<property name="manager" ref="manager3"/>
@@ -202,7 +202,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Arreglar el coche"/>
 		<property name="startDate" value="2021/07/29 16:00"/>
 		<property name="endDate" value="2022/08/05 18:00"/>
-		<property name="workFlowDigits" value="1.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Cambiar la rueda pinchada"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager2"/>
@@ -211,7 +211,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Hacer la comida"/>
 		<property name="startDate" value="2021/05/29 13:00"/>
 		<property name="endDate" value="2022/05/29 14:30"/>
-		<property name="workFlowDigits" value="4.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Espaguetis a la carbonara"/>
 		<property name="publicTask" value="false"/>
 		<property name="manager" ref="manager2"/>
@@ -220,7 +220,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Poner el cuadro"/>
 		<property name="startDate" value="2021/04/29 13:00"/>
 		<property name="endDate" value="2021/04/29 14:30"/>
-		<property name="workFlowDigits" value="3.0"/>
+    <property name="workFlowMinutes" value="90"/>
 		<property name="description" value="Colocar el cuadro en la habitación"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager3"/>
@@ -229,7 +229,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Lavar los platos"/>
 		<property name="startDate" value="2022/04/29 13:00"/>
 		<property name="endDate" value="2022/04/29 14:30"/>
-		<property name="workFlowDigits" value="2.0"/>
+    <property name="workFlowMinutes" value="90"/>
 		<property name="description" value="Lavar todos los platos de la comunion"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager3"/>
@@ -238,7 +238,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Cortar el cesped"/>
 		<property name="startDate" value="2022/04/29 13:00"/>
 		<property name="endDate" value="2022/04/29 18:30"/>
-		<property name="workFlowDigits" value="1.0"/>
+    <property name="workFlowMinutes" value="120"/>
 		<property name="description" value="Cortar cesped y bordes del patio principal"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager3"/>
@@ -247,7 +247,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Lavar los platos"/>
 		<property name="startDate" value="2022/04/29 13:00"/>
 		<property name="endDate" value="2022/04/29 14:30"/>
-		<property name="workFlowDigits" value="4.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Lavar todos los platos de la comunion"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager2"/>
@@ -256,7 +256,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Cortar el cesped"/>
 		<property name="startDate" value="2022/04/29 13:00"/>
 		<property name="endDate" value="2022/04/29 18:30"/>
-		<property name="workFlowDigits" value="3.0"/>
+		<property name="workFlowMinutes" value="180"/>
 		<property name="description" value="Cortar cesped y bordes del patio principal"/>
 		<property name="publicTask" value="false"/>
 		<property name="manager" ref="manager2"/>
@@ -265,7 +265,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Arreglar ordenador"/>
 		<property name="startDate" value="2019/04/29 13:00"/>
 		<property name="endDate" value="2019/04/29 14:30"/>
-		<property name="workFlowDigits" value="2.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Volver a conectar los cables de ordeandor"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager3"/>
@@ -274,7 +274,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Programar algortmo IA"/>
 		<property name="startDate" value="2019/04/29 13:00"/>
 		<property name="endDate" value="2019/04/29 14:30"/>
-		<property name="workFlowDigits" value="1.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Hacer ejercicios de programacion"/>
 		<property name="publicTask" value="false"/>
 		<property name="manager" ref="manager3"/>
@@ -283,7 +283,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Sacar al perro"/>
 		<property name="startDate" value="2019/04/29 13:00"/>
 		<property name="endDate" value="2019/04/29 14:30"/>
-		<property name="workFlowDigits" value="4.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Dar un paseo por el pueblo a Lebron"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager2"/>
@@ -292,7 +292,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 		<property name="title" value="Estudiar Matematicas"/>
 		<property name="startDate" value="2019/04/29 13:00"/>
 		<property name="endDate" value="2019/04/29 14:30"/>
-		<property name="workFlowDigits" value="3.0"/>
+    <property name="workFlowMinutes" value="60"/>
 		<property name="description" value="Estudiar para el examen de matematicas"/>
 		<property name="publicTask" value="true"/>
 		<property name="manager" ref="manager2"/>
