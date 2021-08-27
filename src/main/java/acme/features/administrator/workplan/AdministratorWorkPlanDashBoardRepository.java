@@ -32,9 +32,6 @@ public interface AdministratorWorkPlanDashBoardRepository extends AbstractReposi
 	@Query("SELECT AVG(wp.workLoad) FROM Workplan wp")
 	Double averageWorkFlow();
 	
-//	@Query("SELECT SUM((t.workFlow - :avg) * (t.workFlow - :avg)) FROM Task t")
-//	Double deviationWorkFlow(@Param("avg") double avg);
-	
 	@Query("SELECT MAX(wp.workLoad) FROM Workplan wp")
 	Double maxWorkFlow();
 	
@@ -43,9 +40,6 @@ public interface AdministratorWorkPlanDashBoardRepository extends AbstractReposi
 	
 	@Query("SELECT ABS(FUNCTION('DATEDIFF', wp.startDate, wp.endDate)) FROM Workplan wp")
 	Collection<Double> findAllPeriods();
-	
-//	@Query("SELECT SUM((ABS(FUNCTION('DATEDIFF', t.startDate, t.endDate)) - :avg) * (ABS(FUNCTION('DATEDIFF', t.startDate, t.endDate)) - :avg)) FROM Task t")
-//	Double deviationPeriod(@Param("avg") double avg);
 	
 	@Query("SELECT AVG(ABS(FUNCTION('DATEDIFF', wp.startDate, wp.endDate))) FROM Workplan wp")
 	Double averagePeriod();

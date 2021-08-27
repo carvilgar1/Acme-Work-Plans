@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.dashboardwp.Dashboardwp;
 import acme.entities.workplans.Workplan;
 import acme.framework.components.Model;
@@ -63,10 +64,11 @@ public class AdministratorWorkPlanDashBoardService implements AbstractListServic
 			test.setFinishedWorkPlans(this.repository.numberOfFinishedWorkPlan());
 			test.setNonFinishedWorkPlans(this.repository.numberOfNonFinishedWorkPlan());
 			
-			test.setAverageWorkLoad(this.repository.averageWorkFlow());
-			test.setDeviationWorkLoad(Dashboardwp.deviation(this.repository.findAllWorkFlows()));
-			test.setMaxWorkLoad(this.repository.maxWorkFlow());
-			test.setMinWorkLoad(this.repository.minWorkFlow());
+			test.setAverageWorkLoad(WorkLoad.ofMinutes(this.repository.averageWorkFlow()).toString());
+			test.setDeviationWorkLoad(WorkLoad.ofMinutes(Dashboardwp.deviation(
+				this.repository.findAllWorkFlows())).toString());
+			test.setMaxWorkLoad(WorkLoad.ofMinutes(this.repository.maxWorkFlow()).toString());
+			test.setMinWorkLoad(WorkLoad.ofMinutes(this.repository.minWorkFlow()).toString());
 			
 			test.setAverageExecutionPeriod(this.repository.averagePeriod());
 			test.setDeviationExecutionPeriod(Dashboardwp.deviation(this.repository.findAllPeriods()));
@@ -82,10 +84,10 @@ public class AdministratorWorkPlanDashBoardService implements AbstractListServic
 			test.setFinishedWorkPlans(0);
 			test.setNonFinishedWorkPlans(0);
 			
-			test.setAverageWorkLoad(0.);
-			test.setDeviationWorkLoad(0.);
-			test.setMaxWorkLoad(0.);
-			test.setMinWorkLoad(0.);
+			test.setAverageWorkLoad("00:00");
+			test.setDeviationWorkLoad("00:00");
+			test.setMaxWorkLoad("00:00");
+			test.setMinWorkLoad("00:00");
 			
 			test.setAverageExecutionPeriod(0.);
 			test.setDeviationExecutionPeriod(0.);
