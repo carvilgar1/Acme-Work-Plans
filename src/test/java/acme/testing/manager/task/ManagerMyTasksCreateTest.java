@@ -16,7 +16,7 @@ public class ManagerMyTasksCreateTest extends AcmeWorkPlansTest {
 	@CsvFileSource(resources = "/manager/task/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void createPositive(final int recordIndex, final String title, final String startDate, 
-		final String endDate, final String workFlow, final String description, final String publicTask, final String url) {
+		final String endDate, final String entera,final String decimal, final String description, final String publicTask, final String url) {
 		super.signIn("manager3", "manager3");
 		
 		super.clickOnMenu("Manager", "Create task");
@@ -40,7 +40,8 @@ public class ManagerMyTasksCreateTest extends AcmeWorkPlansTest {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow", workFlow);
+		super.checkInputBoxHasValue("workFlow.entera", entera);
+		super.checkInputBoxHasValue("workFlow.decimal", decimal);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("publicTask", publicTask);
 		super.checkInputBoxHasValue("url", url);

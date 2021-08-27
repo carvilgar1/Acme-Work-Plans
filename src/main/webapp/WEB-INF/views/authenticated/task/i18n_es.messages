@@ -1,7 +1,8 @@
 authenticated.task.list.label.title = Titulo
 authenticated.task.list.label.startDate = Fecha Inicial
 authenticated.task.list.label.endDate = Fecha Final
-authenticated.task.list.label.workFlow = Tiempo trabajado
+authenticated.task.list.label.workFlow.entera = Horas
+authenticated.task.list.label.workFlow.decimal = Minutos
 authenticated.task.list.label.description = Descripcion
 authenticated.task.list.label.publicTask = Tarea publica
 authenticated.task.list.label.id = ID

@@ -123,7 +123,7 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
-				this.workLoad=this.tasks.stream().mapToDouble(Task::getWorkFlow).sum();
+	//			this.workLoad=this.tasks.stream().mapToDouble(Task::getWorkFlow).sum();
 			}
   
 			public boolean canUpdate() {

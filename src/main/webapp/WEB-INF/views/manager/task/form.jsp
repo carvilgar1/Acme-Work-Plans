@@ -20,7 +20,8 @@
 		<acme:form-textbox code= "manager.mytasks.form.label.title" path="title"/>
 		<acme:form-moment  readonly="true" code= "manager.mytasks.form.label.startDate" path="startDate"/>
 		<acme:form-moment code= "manager.mytasks.form.label.endDate" path="endDate"/>
-		<acme:form-double code= "manager.mytasks.form.label.workFlow" path="workFlow"/>
+		<acme:form-textbox code= "manager.mytasks.form.label.workFlow.entera" path="workFlow.entera" />
+		<acme:form-textbox code= "manager.mytasks.form.label.workFlow.decimal" path="workFlow.decimal" />
 		<acme:form-textarea code= "manager.mytasks.form.label.description" path="description"/>
 		<jstl:if test="${publicTask==false }">
 			<acme:form-checkbox code="manager.mytasks.form.label.publicTask" path="publicTask"/>

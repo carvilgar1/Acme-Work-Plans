@@ -15,7 +15,7 @@ public class ManagerMyTasksListTest extends AcmeWorkPlansTest {
 	@CsvFileSource(resources = "/manager/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void listPositive(final int recordIndex, final String title, final String startDate, 
-			final String endDate, final String workFlow, final String description, final String publicTask, final String url) {
+			final String endDate, final String entera, final String decimal, final String description, final String publicTask, final String url) {
 		
 		super.signIn("manager2", "manager2");
 		
@@ -31,7 +31,8 @@ public class ManagerMyTasksListTest extends AcmeWorkPlansTest {
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow", workFlow);
+		super.checkInputBoxHasValue("workFlow.entera", entera);
+		super.checkInputBoxHasValue("workFlow.decimal", decimal);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("publicTask", publicTask);
 		super.checkInputBoxHasValue("url", url);
@@ -47,7 +48,7 @@ public class ManagerMyTasksListTest extends AcmeWorkPlansTest {
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/manageracc/task/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/manageracc/task/list");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 	}

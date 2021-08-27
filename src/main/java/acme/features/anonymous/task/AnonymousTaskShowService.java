@@ -3,6 +3,7 @@ package acme.features.anonymous.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -27,7 +28,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		assert entity!=null;
 		assert model!=null;
 		
-		request.unbind(entity, model, "title","startDate","endDate","workFlow","description","publicTask");
+		request.unbind(entity, model, "title","startDate","endDate","workFlow.entera","workFlow.decimal","description","publicTask");
 	}
 
 	@Override
@@ -39,7 +40,7 @@ public class AnonymousTaskShowService implements AbstractShowService<Anonymous, 
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOnePublicTasksNonFinished(id);
-		
+		result.setWorkFlow(WorkLoad.ofMinutes(result.getWorkFlowMinutes()));
 		return result;
 	}
 

@@ -14,7 +14,7 @@ public class AnonymousTaskListAllTest extends AcmeWorkPlansTest{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/task/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listPositive(final int recordIndex, final String title, final String startDate, final String endDate, final String workFlow, final String description, final String publicTask,final String url) {
+	public void listPositive(final int recordIndex, final String title, final String startDate, final String endDate, final String entera,final String decimal, final String description, final String publicTask,final String url) {
 		
 		super.clickOnMenu("Anonymous", "Tasks");
 		
@@ -29,7 +29,8 @@ public class AnonymousTaskListAllTest extends AcmeWorkPlansTest{
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow",workFlow);
+		super.checkInputBoxHasValue("workFlow.entera",entera);
+		super.checkInputBoxHasValue("workFlow.decimal",decimal);
 		super.checkInputBoxHasValue("description",description);
 		super.checkInputBoxHasValue("publicTask",publicTask);
 		
@@ -43,7 +44,7 @@ public class AnonymousTaskListAllTest extends AcmeWorkPlansTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/anonymous/task/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/anonymous/task/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

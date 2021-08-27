@@ -9,7 +9,8 @@ manager.mytasks.form.label.title = Titulo
 manager.mytasks.form.label.startDate = Fecha inicial
 manager.mytasks.form.label.endDate = Fecha final
 manager.mytasks.form.label.description = Descripcion
-manager.mytasks.form.label.workFlow = Flujo de trabajo
+manager.mytasks.form.label.workFlow.entera = Horas
+manager.mytasks.form.label.workFlow.decimal = Minutos
 manager.mytasks.form.label.publicTask = Publicar tarea
 manager.mytasks.form.label.url = Enlace
 

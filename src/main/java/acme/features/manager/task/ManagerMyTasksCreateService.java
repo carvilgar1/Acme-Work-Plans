@@ -52,10 +52,9 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 	public Task instantiate(final Request<Task> request) {
 		assert request != null;
 		Task task;
-		final Double workFlow = 0.0;
 		final Boolean publicTask = false;
 		task = new Task();
-		task.setWorkFlow(workFlow);
+		task.setWorkFlowMinutes(0);
 		task.setPublicTask(publicTask);
 		return task;
 	}
@@ -113,13 +112,12 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		assert request!=null;
 		assert entity!=null;
 		
-		final Double workFlow = 0.0;
 		final Boolean publicTask = false;
 		final Manager manager;
 		final int id = request.getPrincipal().getActiveRoleId();
 		manager = this.managerRepo.findManagerById(id);
 		
-		entity.setWorkFlow(workFlow);
+		entity.setWorkFlowMinutes(0);
 		entity.setPublicTask(publicTask);
 		entity.setManager(manager);
 		this.repository.save(entity);

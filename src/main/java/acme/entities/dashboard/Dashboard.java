@@ -23,10 +23,10 @@ public class Dashboard extends DomainEntity{
 		private Integer privateTasks;
 		private Integer finishedTasks;
 		private Integer nonFinishedTasks;
-		private Double averageWorkFlow;
-		private Double deviationWorkFlow;
-		private Double maxWorkFlow;
-		private Double minWorkFlow;
+		private String averageWorkFlow;
+		private String deviationWorkFlow;
+		private String maxWorkFlow;
+		private String minWorkFlow;
 		private Double averageExecutionPeriod;
 		private Double deviationExecutionPeriod;
 		private Double maxExecutionPeriod;
