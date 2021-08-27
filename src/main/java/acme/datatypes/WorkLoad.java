@@ -1,20 +1,15 @@
 package acme.datatypes;
 
-import javax.persistence.Embeddable;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import acme.framework.datatypes.DomainDatatype;
 import lombok.Getter;
 import lombok.Setter;
 
-@Embeddable
 @Getter
 @Setter
-public class WorkLoad extends DomainDatatype{
-
-	protected static final long	serialVersionUID	= 1L;
+public class WorkLoad{
 	
 	@NotNull
 	@Min(0)
@@ -29,7 +24,7 @@ public class WorkLoad extends DomainDatatype{
 	public Double getValorDecimal() {
 		return this.entera + 0.01*this.decimal;
 	}
-	
+
 	public long getMilliseconds() {
 		return this.entera*3600000l + this.decimal*60000l;
 	}

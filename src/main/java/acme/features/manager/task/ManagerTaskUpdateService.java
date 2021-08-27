@@ -5,7 +5,6 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spamfilter.spamword.AdministratorSpamwordListService;
@@ -75,10 +74,7 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			errors.state(request, b3, "endDate", "manager.mytasks.error.dates");
 			errors.state(request, b1, "workFlow.decimal", "manager.mytasks.error.workFlow");
 		}
-//		if(entity.getStartDate()!=null) {
-//			final Boolean b1 = this.fechaInicialDespuesFechaActual(entity);
-//			errors.state(request, b1, "startDate", "manager.mytasks.error.startDate");
-//		}
+
 		if(entity.getEndDate()!=null) {
 			final Boolean b2 = this.fechaFinalDespuesFechaActual(entity);
 			errors.state(request, b2, "endDate", "manager.mytasks.error.endDate");
@@ -98,22 +94,13 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		return b;
 	}
 	
-//	public Boolean fechaInicialDespuesFechaActual(final Task task) {
-//		if(task.getStartDate()!=null) {
-//			final Date actual = new Date(System.currentTimeMillis()-1);
-//			return task.getStartDate().after(actual);
-//		} else {
-//			return false;
-//		}
-//	}
-	
 	public Boolean fechaFinalDespuesFechaActual(final Task task) {
 		final Date actual = new Date(System.currentTimeMillis()-1);
 		return task.getEndDate().after(actual);
 	}
 	
 	private Boolean workFlowValidation(final Task entity) {
-		final WorkLoad taskWorkFlow = entity.getWorkFlow();
+		final Double taskWorkFlow = entity.getWorkFlow().getValorEnHoras();
 		final long diff = entity.getEndDate().getTime() - entity.getStartDate().getTime();
 		final long workFlowMs = taskWorkFlow.getMilliseconds();
 		if(workFlowMs > diff) {
@@ -130,21 +117,21 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		String title;
 		Date endDate;
-		WorkLoad workFlow;
+		Double workFlow;
 		String description;
 		Boolean publicTask;
 		String url;
 		
 		title = request.getModel().getString("title");
 		endDate =request.getModel().getDate("endDate");
-		workFlow = entity.getWorkFlow();
+		workFlow = entity.getWorkFlow().getValorDecimal();
 		description = request.getModel().getString("description");
 		publicTask = request.getModel().getBoolean("publicTask");
 		url = request.getModel().getString("url");
 		
 		entity.setTitle(title);
 		entity.setEndDate(endDate);
-		entity.setWorkFlow(workFlow);
+		entity.setWorkFlowDigits(workFlow);
 		entity.setDescription(description);
 		entity.setPublicTask(publicTask);
 		entity.setUrl(url);
