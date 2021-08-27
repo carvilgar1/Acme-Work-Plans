@@ -61,16 +61,14 @@ public class AdministratorDashBoardService implements AbstractListService<Admini
 			test.setFinishedTasks(this.repository.numberOfFinishedTasks());
 			test.setNonFinishedTasks(this.repository.numberOfNonFinishedTasks());
 
-			final WorkLoad wltest = new WorkLoad();
-			wltest.setEntera(3);
-			wltest.setDecimal(30);
-			test.setAverageWorkFlow(Dashboard.average(this.repository.findAllWorkFlows()).toString());
-			test.setDeviationWorkFlow(wltest.toString());
-			test.setMaxWorkFlow(Dashboard.max(this.repository.findAllWorkFlows()).toString());
-			test.setMinWorkFlow(Dashboard.min(this.repository.findAllWorkFlows()).toString());
+			test.setAverageWorkFlow(WorkLoad.ofMinutes(this.repository.averageWorkFlow()).toString());
+			test.setDeviationWorkFlow(WorkLoad.ofMinutes(Dashboard.deviation(
+				this.repository.findAllWorkFlows())).toString());
+			test.setMaxWorkFlow(WorkLoad.ofMinutes(this.repository.maxWorkFlow()).toString());
+			test.setMinWorkFlow(WorkLoad.ofMinutes(this.repository.minWorkFlow()).toString());
 			
 			test.setAverageExecutionPeriod(this.repository.averagePeriod());
-			test.setDeviationExecutionPeriod(null);//Dashboard.deviation(this.repository.findAllPeriods()));
+			test.setDeviationExecutionPeriod(Dashboard.deviation(this.repository.findAllPeriods()));
 			test.setMaxExecutionPeriod(this.repository.maxPeriod());
 			test.setMinExecutionPeriod(this.repository.minPeriod());
 
@@ -85,10 +83,10 @@ public class AdministratorDashBoardService implements AbstractListService<Admini
 			test.setFinishedTasks(0);
 			test.setNonFinishedTasks(0);
 			
-			test.setAverageWorkFlow("nothing");
-			test.setDeviationWorkFlow("nothing");
-			test.setMaxWorkFlow("nothing");
-			test.setMinWorkFlow("nothing");
+			test.setAverageWorkFlow("00:00");
+			test.setDeviationWorkFlow("00:00");
+			test.setMaxWorkFlow("00:00");
+			test.setMinWorkFlow("00:00");
 			
 			test.setAverageExecutionPeriod(0.);
 			test.setDeviationExecutionPeriod(0.);

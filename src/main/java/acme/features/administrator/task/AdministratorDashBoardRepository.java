@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.datatypes.WorkLoad;
 import acme.entities.tasks.Task;
 import acme.framework.repositories.AbstractRepository;
 
@@ -16,7 +15,7 @@ public interface AdministratorDashBoardRepository extends AbstractRepository{
 	Collection<Task> findAllTasks();
 	
 	@Query("SELECT t.workFlow.entera*60 + t.workFlow.decimal FROM Task t")
-	Collection<WorkLoad> findAllWorkFlows();
+	Collection<Double> findAllWorkFlows();
 	
 	@Query("SELECT COUNT(t) FROM Task t WHERE t.endDate >= CURRENT_DATE")
 	Integer numberOfNonFinishedTasks();

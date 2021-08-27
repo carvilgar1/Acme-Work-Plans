@@ -13,7 +13,7 @@ public class AdministratorTaskDashBoardTestCase extends AcmeWorkPlansTest{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/task/task-dashboard.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listPositive( 
+	public void listPositive(
 	final String publicTasks,
 	final String privateTasks,
 	final String finishedTasks,
@@ -41,7 +41,7 @@ public class AdministratorTaskDashBoardTestCase extends AcmeWorkPlansTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-			super.driver.get("http://localhost:8080/Acme-Planner/administrator/dashboard/list");
+			super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/dashboard/list");
 			super.checkErrorsExist();
 			if(username!=null) super.signOut();
 	}

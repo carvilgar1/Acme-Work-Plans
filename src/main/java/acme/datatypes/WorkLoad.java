@@ -12,7 +12,7 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class WorkLoad extends DomainDatatype implements Comparable<WorkLoad>{
+public class WorkLoad extends DomainDatatype{
 
 	protected static final long	serialVersionUID	= 1L;
 	
@@ -38,10 +38,10 @@ public class WorkLoad extends DomainDatatype implements Comparable<WorkLoad>{
 		return this.entera*60 + this.decimal;
 	}
 	
-	public static WorkLoad ofMinutes(final Integer minutes) {
+	public static WorkLoad ofMinutes(final double minutes) {
 		final WorkLoad r = new WorkLoad();
-		r.setEntera(minutes/60);
-		r.setDecimal(minutes%60);
+		r.setEntera((int)minutes/60);
+		r.setDecimal((int)minutes%60);
 		return r;
 	}
 	
@@ -50,23 +50,11 @@ public class WorkLoad extends DomainDatatype implements Comparable<WorkLoad>{
 		StringBuilder result;
 
 		result = new StringBuilder();
-		result.append(this.entera);
-		result.append(".");
-		result.append(this.decimal);
+		result.append(String.format("%02d", this.entera));
+		result.append(":");
+		result.append(String.format("%02d", this.decimal));
 
 		return result.toString();
-	}
-
-	@Override
-	public int compareTo(final WorkLoad o) {
-		int r = this.getEntera().compareTo(o.getEntera());
-		if(r == 0) {
-			r = this.getDecimal().compareTo(o.getDecimal());
-		}
-		return r;
-	}
-	
-	
-	
+	}	
 	
 }
