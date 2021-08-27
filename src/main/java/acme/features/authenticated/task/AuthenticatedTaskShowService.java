@@ -3,6 +3,7 @@ package acme.features.authenticated.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -27,7 +28,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		assert entity!=null;
 		assert model!=null;
 		
-		request.unbind(entity, model, "title","startDate","endDate","workFlow","description","publicTask");
+		request.unbind(entity, model, "title","startDate","endDate","workFlow.entera","workFlow.decimal","description","publicTask");
 	}
 
 	@Override
@@ -39,6 +40,7 @@ public class AuthenticatedTaskShowService implements AbstractShowService<Authent
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOnePublicTasksFinished(id);
+		result.setWorkFlow(WorkLoad.ofMinutes(result.getWorkFlowMinutes()));
 		
 		return result;
 	}

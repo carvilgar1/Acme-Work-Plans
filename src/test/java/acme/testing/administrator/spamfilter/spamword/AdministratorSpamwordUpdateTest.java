@@ -31,7 +31,7 @@ public class AdministratorSpamwordUpdateTest extends AcmeWorkPlansTest {
 		super.clickOnSubmitButton("Update");
 		
 		super.checkSimplePath("/administrator/spamword/list");
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkInputBoxHasValue("spamword", spamword);
 
 		super.fillInputBoxIn("spamword", "duro");
@@ -62,7 +62,7 @@ public class AdministratorSpamwordUpdateTest extends AcmeWorkPlansTest {
 		
 		super.checkErrorsExist();
 		
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkInputBoxHasValue("spamword", "duro");
 		
 		super.signOut();
@@ -77,7 +77,7 @@ public class AdministratorSpamwordUpdateTest extends AcmeWorkPlansTest {
 	@Order(20)
 	public void updateNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

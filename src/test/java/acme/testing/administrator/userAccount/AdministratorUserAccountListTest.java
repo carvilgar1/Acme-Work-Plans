@@ -72,7 +72,7 @@ public class AdministratorUserAccountListTest extends AcmeWorkPlansTest{
 	@Order(30)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/user-account/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/user-account/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

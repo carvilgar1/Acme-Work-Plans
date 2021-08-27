@@ -21,13 +21,13 @@ public class AdministratorSpamwordDeleteTest extends AcmeWorkPlansTest{
 	public void deletePositive() {
 		this.signIn("administrator", "administrator");
 		
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/delete?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/delete?id=66");
 		
 		super.checkInputBoxHasValue("spamword", "duro");
 		super.clickOnSubmitButton("Delete");
 		
 		super.checkSimplePath("/master/welcome");
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/show?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/show?id=66");
 		super.checkErrorsExist();
 		
 		this.signOut();
@@ -43,7 +43,7 @@ public class AdministratorSpamwordDeleteTest extends AcmeWorkPlansTest{
 	@Order(20)
 	public void deleteNegative(final String username, final String password) {	
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/delete?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/delete?id=66");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

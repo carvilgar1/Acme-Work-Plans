@@ -37,7 +37,7 @@ public class AuthenticatedUserAccountShowTest extends AcmeWorkPlansTest{
 	@Test
 	@Order(20)
     public void showNegative() {
-        super.driver.get("http://localhost:8080/Acme-Planner/authenticated/user-account/update");
+        super.driver.get("http://localhost:8080/Acme-Work-Plans/authenticated/user-account/update");
         super.checkErrorsExist();
         
     }

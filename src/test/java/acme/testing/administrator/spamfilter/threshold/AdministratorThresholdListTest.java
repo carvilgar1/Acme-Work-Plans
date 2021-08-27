@@ -43,7 +43,7 @@ public class AdministratorThresholdListTest extends AcmeWorkPlansTest {
 	@Order(30)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/threshold/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/threshold/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

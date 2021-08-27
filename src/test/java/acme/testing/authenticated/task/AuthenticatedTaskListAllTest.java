@@ -15,7 +15,8 @@ public class AuthenticatedTaskListAllTest extends AcmeWorkPlansTest{
 	@ParameterizedTest
 	@CsvFileSource(resources = "/authenticated/task/list-all.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listPositive(final int recordIndex, final String title, final String startDate, final String endDate, final String workFlow, final String description, final String publicTask,final String url) {
+	public void listPositive(final int recordIndex, final String title, final String startDate, final String endDate, 
+		final String entera,final String decimal, final String description, final String publicTask,final String url) {
 		this.signIn("fervalnav", "Qwerty123");
 		
 		super.clickOnMenu("Authenticated", "Tasks");
@@ -31,7 +32,8 @@ public class AuthenticatedTaskListAllTest extends AcmeWorkPlansTest{
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow",workFlow);
+		super.checkInputBoxHasValue("workFlow.entera",entera);
+		super.checkInputBoxHasValue("workFlow.decimal",decimal);
 		super.checkInputBoxHasValue("description",description);
 		super.checkInputBoxHasValue("publicTask",publicTask);
 		
@@ -44,7 +46,7 @@ public class AuthenticatedTaskListAllTest extends AcmeWorkPlansTest{
 	@Test
 	@Order(20)
 	public void listNegative() {
-		super.driver.get("http://localhost:8080/Acme-Planner/authenticated/task/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/authenticated/task/list");
 		super.checkErrorsExist();
 	}
 
