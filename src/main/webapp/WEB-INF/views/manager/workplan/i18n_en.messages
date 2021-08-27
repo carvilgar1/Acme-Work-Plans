@@ -31,4 +31,5 @@ manager.workplan.message.recommend= We recommend:
 
 manager.workplan.tasks.title= Title
 manager.workplan.tasks.description= Description
-manager.workplan.tasks.workflow= Work Flow
+manager.workplan.tasks.workflow.entera = Hours
+manager.workplan.tasks.workflow.decimal = Minutes
