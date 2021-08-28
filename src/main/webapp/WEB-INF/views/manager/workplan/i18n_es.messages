@@ -31,5 +31,4 @@ manager.workplan.message.recommend =Recomendamos:
 
 manager.workplan.tasks.title= Titulo
 manager.workplan.tasks.description= Descripcion
-manager.workplan.tasks.workflow.entera = Horas
-manager.workplan.tasks.workflow.decimal = Minutos
+manager.workplan.tasks.workflow = Carga de Trabajo

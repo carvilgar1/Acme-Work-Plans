@@ -51,8 +51,7 @@
 		<thead><tr>
 			<th scope="col"><acme:message code="manager.workplan.tasks.title"/></th>
 			<th scope="col"><acme:message code="manager.workplan.tasks.description"/></th>
-			<th scope="col"><acme:message code="manager.workplan.tasks.workflow.entera"/></th>
-			<th scope="col"><acme:message code="manager.workplan.tasks.workflow.decimal"/></th>
+			<th scope="col"><acme:message code="manager.workplan.tasks.workflow"/></th>
 			<th scope="col"></th>
 		</tr></thead>
 <jstl:if test="${tasks.size()>0 }">
@@ -61,8 +60,7 @@
 				<tr class="table-light">
 					<td><jstl:out value="${task.title}"/></td>
 					<td><jstl:out value="${task.description}"/></td>
-					<td><jstl:out value="${task.workFlow.entera}"/></td>
-					<td><jstl:out value="${task.workFlow.decimal}"/></td>
+					<td><jstl:out value="${task.workFlow}"/></td>
 					 <jstl:if test="${canUpdate}"><td><acme:form>
 						<input type="hidden" name="deleteTask" value="${task.id}"/>
 						<acme:form-hidden path="id"/>

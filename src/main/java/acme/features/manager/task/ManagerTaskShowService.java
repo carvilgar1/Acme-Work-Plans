@@ -3,7 +3,6 @@ package acme.features.manager.task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.components.Model;
@@ -42,7 +41,6 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		final int id = request.getModel().getInteger("id");
 		Task result;
 		result = this.repository.findTaskById(id);
-		result.setWorkFlow(WorkLoad.ofMinutes(result.getWorkFlowMinutes()));
 		return result;
 	}
 }

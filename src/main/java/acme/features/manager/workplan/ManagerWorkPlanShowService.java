@@ -77,7 +77,6 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		final int id=request.getModel().getInteger("id");
 		Workplan result;
 		result=this.repository.findById(id);
-		result.getTasks().stream().forEach(x->x.setWorkFlow(WorkLoad.ofMinutes(x.getWorkFlowMinutes())));
 		result.setWorkLoadString(WorkLoad.ofMinutes(result.getWorkLoad()).toString());
 		return result;
 	}

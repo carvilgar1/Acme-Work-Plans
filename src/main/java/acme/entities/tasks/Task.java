@@ -4,11 +4,11 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.PostLoad;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -45,8 +45,13 @@ public class Task extends DomainEntity{
 		@Transient
 		@Valid
 		private WorkLoad workFlow;
+		
+		@PostLoad
+		protected void initSomeTransientString() {
+		    this.workFlow = WorkLoad.ofMinutes(this.workFlowMinutes);
+		}
     
-    @NotNull
+		@NotNull
 		private Integer workFlowMinutes;
 		
 		@NotBlank
