@@ -39,7 +39,10 @@ public class Workplan extends DomainEntity{
 			private Date endDate;
 			
 			@Min(0)
-			private Double workLoad;
+			private Integer workLoad;
+			
+			@Transient
+			private String workLoadString;
 			
 			@NotNull
 			private Boolean publicPlan;
@@ -123,7 +126,7 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
-	//			this.workLoad=this.tasks.stream().mapToDouble(Task::getWorkFlow).sum();
+				this.workLoad=this.tasks.stream().mapToInt(Task::getWorkFlowMinutes).sum();
 			}
   
 			public boolean canUpdate() {

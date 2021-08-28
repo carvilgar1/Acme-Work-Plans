@@ -23,10 +23,10 @@ public class Dashboardwp extends DomainEntity{
 		private Integer privateWorkPlans;
 		private Integer finishedWorkPlans;
 		private Integer nonFinishedWorkPlans;
-		private Double averageWorkLoad;
-		private Double deviationWorkLoad;
-		private Double maxWorkLoad;
-		private Double minWorkLoad;
+		private String averageWorkLoad;
+		private String deviationWorkLoad;
+		private String maxWorkLoad;
+		private String minWorkLoad;
 		private Double averageExecutionPeriod;
 		private Double deviationExecutionPeriod;
 		private Double maxExecutionPeriod;

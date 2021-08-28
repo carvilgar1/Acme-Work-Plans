@@ -52,7 +52,7 @@ public class AdministratorWorkPlanDashBoardTestCase extends AcmeWorkPlansTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-			super.driver.get("http://localhost:8080/Acme-Planner/administrator/dashboardwp/list");
+			super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/dashboardwp/list");
 			super.checkErrorsExist();
 			if(username!=null) super.signOut();;
 	}

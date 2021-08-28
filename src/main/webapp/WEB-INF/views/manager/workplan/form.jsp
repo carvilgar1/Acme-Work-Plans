@@ -21,7 +21,7 @@
 
 	<fmt:formatDate value="${finalRecommend}" pattern="yyyy/MM/dd HH:mm" type = "both" dateStyle="short"/>
 
-	<acme:form-double readonly="true" code="manager.workplan.form.label.workLoad" path="workLoad"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad" path="workLoadString"/>
 	<acme:form-checkbox readonly="true" code="manager.workplan.form.label.publicPlan" path="publicPlan"/>
 
 	<acme:form-submit code="manager.workplan.form.button.update" action="/manageracc/workplan/update"/>
@@ -32,7 +32,7 @@
 	<acme:form-moment readonly="true" code="manager.workplan.form.label.startDate" path="startDate"/>
 	<acme:form-moment readonly="true" code="manager.workplan.form.label.endDate" path="endDate"/>
 
-	<acme:form-double readonly="true" code="manager.workplan.form.label.workLoad" path="workLoad"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad" path="workLoadString"/>
 	<acme:form-checkbox readonly="true" code="manager.workplan.form.label.publicPlan" path="publicPlan"/>
 </jstl:if>
 <jstl:if test="${command=='delete'}">
