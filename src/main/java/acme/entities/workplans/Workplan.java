@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.PostLoad;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
@@ -14,6 +15,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.entities.DomainEntity;
@@ -39,10 +41,16 @@ public class Workplan extends DomainEntity{
 			private Date endDate;
 			
 			@Min(0)
-			private Integer workLoad;
+			private Integer workLoadMinutes;
 			
 			@Transient
-			private String workLoadString;
+			@Valid
+			private WorkLoad workLoad;
+			
+			@PostLoad
+			protected void initWorkLoadView() {
+				this.workLoad = WorkLoad.ofMinutes(this.workLoadMinutes);
+			}
 			
 			@NotNull
 			private Boolean publicPlan;
@@ -126,7 +134,7 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
-				this.workLoad=this.tasks.stream().mapToInt(Task::getWorkFlowMinutes).sum();
+				this.workLoadMinutes=this.tasks.stream().mapToInt(Task::getWorkFlowMinutes).sum();
 			}
   
 			public boolean canUpdate() {

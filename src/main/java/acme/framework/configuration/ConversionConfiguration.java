@@ -18,6 +18,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import acme.datatypes.WorkLoadToStringConverter;
 import acme.framework.utilities.LocalisedDateFormatter;
 import acme.framework.utilities.LocalisedDoubleFormatter;
 import acme.framework.utilities.LocalisedMoneyFormatter;
@@ -45,6 +46,7 @@ public class ConversionConfiguration implements WebMvcConfigurer {
 
 		moneyFormatter = new LocalisedMoneyFormatter();
 		registry.addFormatter(moneyFormatter);
+		registry.addConverter(new WorkLoadToStringConverter());
 	}
 
 }

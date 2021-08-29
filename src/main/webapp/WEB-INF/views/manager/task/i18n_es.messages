@@ -1,7 +1,7 @@
 manager.mytasks.list.label.title = Titulo
 manager.mytasks.list.label.startDate = Fecha inicial
 manager.mytasks.list.label.endDate = Fecha final
-manager.mytasks.list.label.workFlow = Tiempo trabajado
+manager.mytasks.list.label.workFlow = Carga de trabajo
 manager.mytasks.list.label.description = Descripcion
 manager.mytasks.list.label.publicTask = Tarea Publica
 
@@ -9,6 +9,7 @@ manager.mytasks.form.label.title = Titulo
 manager.mytasks.form.label.startDate = Fecha inicial
 manager.mytasks.form.label.endDate = Fecha final
 manager.mytasks.form.label.description = Descripcion
+manager.mytasks.form.label.workFlow = Carga de trabajo
 manager.mytasks.form.label.workFlow.entera = Horas
 manager.mytasks.form.label.workFlow.decimal = Minutos
 manager.mytasks.form.label.publicTask = Publicar tarea
@@ -20,6 +21,7 @@ manager.mytasks.error.endDate = La fecha final debe ser posterior a la fecha act
 manager.mytasks.error.workFlow = El flujo de trabajo debe ser menor o igual a las horas entre la fecha de inicio y fin
 manager.mytasks.error.endDateNull = Las fechas no pueden estar vacías
 manager.mytasks.error.spam = Esta tarea contiene palabras spam
+manager.mytasks.error.hours = No puede mayor que 99
 
 manager.mytasks.form.button.update = Actualizar tarea!
 manager.mytasks.form.button.create = Crear tarea!

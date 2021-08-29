@@ -7,7 +7,6 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.workplans.Workplan;
@@ -68,7 +67,7 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		model.setAttribute("tasksInsert", t);
 		if(wp.getEndDate()!=null)model.setAttribute("canUpdate", wp.canUpdate());
 		else model.setAttribute("canUpdate",true);
-		request.unbind(entity, model, "startDate", "endDate", "workLoadString", "publicPlan", "tasks");
+		request.unbind(entity, model, "startDate", "endDate", "workLoad", "publicPlan", "tasks");
 	}
 
 	@Override
@@ -77,7 +76,6 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		final int id=request.getModel().getInteger("id");
 		Workplan result;
 		result=this.repository.findById(id);
-		result.setWorkLoadString(WorkLoad.ofMinutes(result.getWorkLoad()).toString());
 		return result;
 	}
 

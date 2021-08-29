@@ -56,7 +56,7 @@ public class ManagerMyTaskDeleteService implements AbstractDeleteService<Manager
 	public void unbind(final Request<Task> request, final Task entity, final Model model) {
 		assert request != null && entity != null && model != null;
 
-		request.unbind(entity, model, "title", "startDate", "endDate", "description", "publicTask", "url");
+		request.unbind(entity, model, "title", "startDate", "endDate", "workFlow", "description", "publicTask", "url");
 	}
 
 	@Override

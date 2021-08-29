@@ -19,8 +19,7 @@
 	<acme:form-textbox  code="anonymous.task.list.label.title" path="title"/>
 	<acme:form-textbox  code="anonymous.task.list.label.startDate" path="startDate" />
 	<acme:form-textbox  code="anonymous.task.list.label.endDate" path="endDate"/>
-	<acme:form-textbox  code="anonymous.task.list.label.workFlow.entera" path="workFlow.entera" />
-	<acme:form-textbox  code="anonymous.task.list.label.workFlow.decimal" path="workFlow.decimal" />
+	<acme:form-textbox  code="anonymous.task.list.label.workFlow" path="workFlow"/>
 	<acme:form-textbox  code="anonymous.task.list.label.description" path="description" />
 	<acme:form-textbox  code="anonymous.task.list.label.publicTask" path="publicTask"/>
 	

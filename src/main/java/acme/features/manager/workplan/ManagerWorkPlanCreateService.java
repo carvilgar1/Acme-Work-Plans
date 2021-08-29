@@ -61,7 +61,7 @@ public class ManagerWorkPlanCreateService implements AbstractCreateService<Manag
 		assert request!=null;
 		final Workplan wp=new Workplan();
 		wp.setTasks(new HashSet<>());
-		wp.setWorkLoad(0);
+		wp.setWorkLoadMinutes(0);
 		wp.setManager(this.managerRepository.findManagerById(request.getPrincipal().getActiveRoleId()));
 		wp.setPublicPlan(false);
 		return wp;
