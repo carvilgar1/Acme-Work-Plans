@@ -1,15 +1,20 @@
 package acme.datatypes;
 
+import javax.persistence.Embeddable;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
 
+@Embeddable
 @Getter
 @Setter
-public class WorkLoad implements Comparable<WorkLoad>{
+public class WorkLoad extends DomainEntity implements Comparable<WorkLoad>{
+	
+	protected static final long	serialVersionUID	= 1L;
 	
 	@NotNull
 	@Min(0)
@@ -24,15 +29,19 @@ public class WorkLoad implements Comparable<WorkLoad>{
 		return this.entera*3600000l + this.decimal*60000l;
 	}
 	
-	public Integer getMinutes() {
-		return this.entera*60 + this.decimal;
-	}
-	
 	public static WorkLoad ofMinutes(final double minutes) {
 		final WorkLoad r = new WorkLoad();
 		r.setEntera((int)minutes/60);
 		r.setDecimal((int)minutes%60);
 		return r;
+	}
+	
+	public void addTime(final WorkLoad o) {
+		assert this != null;
+		final Integer horas = this.entera + o.entera;
+		final Integer minutos = this.decimal + o.decimal;
+		this.entera = horas + minutos/60;
+		this.decimal = minutos%60;
 	}
 	
 	@Override

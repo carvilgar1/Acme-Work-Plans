@@ -14,7 +14,7 @@ public interface AuthenticatedTaskRepository extends AbstractRepository{
 	@Query("SELECT t FROM Task t WHERE t.publicTask = TRUE AND t.endDate < CURRENT_DATE AND t.id = ?1")
 	Task findOnePublicTasksFinished(int id);
 	
-	@Query("SELECT t FROM Task t WHERE t.publicTask = TRUE AND t.endDate < CURRENT_DATE ORDER BY t.workFlowMinutes ASC")
+	@Query("SELECT t FROM Task t WHERE t.publicTask = TRUE AND t.endDate < CURRENT_DATE")
 	Collection<Task> findPublicTasksFinished();
 	
 }
