@@ -1,2 +1,4 @@
-publicTasks,privateTasks,finishedTasks,nonFinishedTasks,averageWorkFlow,deviationWorkFlow,maxWorkFlow,minWorkFlow,averageExecutionPeriod,deviationExecutionPeriod,maxExecutionPeriod,minExecutionPeriod
-12,6,6,12,3.06,7.53,25.00,1.00,163.00,147.43,372.00,0.00
+recordIndex,publicTasks,privateTasks,finishedTasks,nonFinishedTasks,averageWorkFlow,deviationWorkFlow,maxWorkFlow,minWorkFlow,averageExecutionPeriod,deviationExecutionPeriod,maxExecutionPeriod,minExecutionPeriod
+0,12,6,6,12,3.06,7.53,25.00,1.00,142.72,178.27,371.00,0.00
+1,12,7,6,13,2.56,7.38,25.00,0.00,135.26,182.36,371.00,0.00
+2,12,7,6,13,4.12,9.29,25.00,1.00,135.26,182.36,371.00,0.00
