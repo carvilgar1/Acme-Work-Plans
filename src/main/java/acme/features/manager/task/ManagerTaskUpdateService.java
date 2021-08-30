@@ -72,7 +72,9 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			&& entity.getWorkFlow().getEntera()!=null && entity.getWorkFlow().getDecimal()!=null) {
 			final Boolean b1 = this.workFlowValidation(entity);
 			final Boolean b3 = this.validacionFechas(entity);
+			final Boolean b4 = entity.getWorkFlow().getEntera().compareTo(100) < 0;
 			errors.state(request, b3, "endDate", "manager.mytasks.error.dates");
+			errors.state(request, b4, "workFlow.entera", "manager.mytasks.error.hours");
 			errors.state(request, b1, "workFlow.decimal", "manager.mytasks.error.workFlow");
 		}
 
@@ -118,21 +120,21 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 		
 		String title;
 		Date endDate;
-		Integer workFlow;
+		WorkLoad workFlow;
 		String description;
 		Boolean publicTask;
 		String url;
 		
 		title = request.getModel().getString("title");
 		endDate =request.getModel().getDate("endDate");
-		workFlow = entity.getWorkFlow().getMinutes();
+		workFlow = entity.getWorkFlow();
 		description = request.getModel().getString("description");
 		publicTask = request.getModel().getBoolean("publicTask");
 		url = request.getModel().getString("url");
 		
 		entity.setTitle(title);
 		entity.setEndDate(endDate);
-		entity.setWorkFlowMinutes(workFlow);
+		entity.setWorkFlow(workFlow);
 		entity.setDescription(description);
 		entity.setPublicTask(publicTask);
 		entity.setUrl(url);

@@ -21,6 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import acme.framework.utilities.LocalisedDateFormatter;
 import acme.framework.utilities.LocalisedDoubleFormatter;
 import acme.framework.utilities.LocalisedMoneyFormatter;
+import acme.utilities.WorkLoadToStringConverter;
 
 @Configuration
 public class ConversionConfiguration implements WebMvcConfigurer {
@@ -45,6 +46,7 @@ public class ConversionConfiguration implements WebMvcConfigurer {
 
 		moneyFormatter = new LocalisedMoneyFormatter();
 		registry.addFormatter(moneyFormatter);
+		registry.addConverter(new WorkLoadToStringConverter());
 	}
 
 }

@@ -38,7 +38,7 @@ public class AnonymousWorkPlanListTest extends AcmeWorkPlansTest {
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/anonymous/workplan/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/anonymous/workplan/list");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 	}

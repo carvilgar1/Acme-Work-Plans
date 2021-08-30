@@ -15,20 +15,23 @@ public class ManagerWorkPlanAddTaskTest extends AcmeWorkPlansTest{
 	@ParameterizedTest
 	@CsvFileSource(resources="/manager/workplan/addTask-positive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(10)
-	public void updatePositive(final int recordIndex, final String taskId, final String workLoad, final String newWorkLoad) {
+	public void updatePositive(final int recordIndex, final String taskId, final String entera,final String decimal, 
+		final String newEntera, final String newDecimal) {
 		//Iniciamos sesion como manager y accedemos al formulario del plan de trabajo dado en los parametros
 		super.signIn("manager2", "manager2");
 		super.clickOnMenu("Manager", "Works Plans");
 		super.clickOnListingRecord(recordIndex);
 		//Comprobamos la carga de trabajo
-		super.checkInputBoxHasValue("workLoad", workLoad);
+		super.checkInputBoxHasValue("workLoad.entera", entera);
+		super.checkInputBoxHasValue("workLoad.decimal", decimal);
 		//Añadimos una nueva tarea
 		super.fillInputBoxIn("addTask", taskId);
 		super.clickOnSubmitButton("Add");
 		
 		//Verificamos que la carga de trabajo se ha actualizado
 		super.clickOnListingRecord(recordIndex);
-		super.checkInputBoxHasValue("workLoad", newWorkLoad);
+		super.checkInputBoxHasValue("workLoad.entera", newEntera);
+		super.checkInputBoxHasValue("workLoad.decimal", newDecimal);
 	}
 	
 		//En este test se va a probar el caso negativo de añadir una tarea a un work plan, 

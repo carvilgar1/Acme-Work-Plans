@@ -7,6 +7,7 @@ import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.entities.workplans.Workplan;
@@ -60,8 +61,11 @@ public class ManagerWorkPlanCreateService implements AbstractCreateService<Manag
 	public Workplan instantiate(final Request<Workplan> request) {
 		assert request!=null;
 		final Workplan wp=new Workplan();
+		final WorkLoad wl = new WorkLoad();
+		wl.setEntera(0);
+		wl.setDecimal(0);
 		wp.setTasks(new HashSet<>());
-		wp.setWorkLoad(0);
+		wp.setWorkLoad(wl);
 		wp.setManager(this.managerRepository.findManagerById(request.getPrincipal().getActiveRoleId()));
 		wp.setPublicPlan(false);
 		return wp;

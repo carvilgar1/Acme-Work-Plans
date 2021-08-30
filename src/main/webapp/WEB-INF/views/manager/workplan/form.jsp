@@ -20,8 +20,8 @@
 	<acme:message code="manager.workplan.message.recommend"/>
 
 	<fmt:formatDate value="${finalRecommend}" pattern="yyyy/MM/dd HH:mm" type = "both" dateStyle="short"/>
-
-	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad" path="workLoadString"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad.entera" path="workLoad.entera"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad.decimal" path="workLoad.decimal"/>
 	<acme:form-checkbox readonly="true" code="manager.workplan.form.label.publicPlan" path="publicPlan"/>
 
 	<acme:form-submit code="manager.workplan.form.button.update" action="/manageracc/workplan/update"/>
@@ -31,8 +31,8 @@
 <jstl:if test="${command!='create' && !canUpdate}">
 	<acme:form-moment readonly="true" code="manager.workplan.form.label.startDate" path="startDate"/>
 	<acme:form-moment readonly="true" code="manager.workplan.form.label.endDate" path="endDate"/>
-
-	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad" path="workLoadString"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad.entera" path="workLoad.entera"/>
+	<acme:form-textbox readonly="true" code="manager.workplan.form.label.workLoad.decimal" path="workLoad.decimal"/>
 	<acme:form-checkbox readonly="true" code="manager.workplan.form.label.publicPlan" path="publicPlan"/>
 </jstl:if>
 <jstl:if test="${command=='delete'}">

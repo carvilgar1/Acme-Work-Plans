@@ -1,7 +1,7 @@
 manager.mytasks.list.label.title = Title
 manager.mytasks.list.label.startDate = Start Date
 manager.mytasks.list.label.endDate = End Date
-manager.mytasks.list.label.workFlow = Work Flow
+manager.mytasks.list.label.workFlow = Work Load
 manager.mytasks.list.label.description = Description
 manager.mytasks.list.label.publicTask = Public Task
 
@@ -9,6 +9,7 @@ manager.mytasks.form.label.title = Title
 manager.mytasks.form.label.startDate = Start Date
 manager.mytasks.form.label.endDate = End Date
 manager.mytasks.form.label.description = Description
+manager.mytasks.form.label.workFlow = Work Load
 manager.mytasks.form.label.workFlow.entera = Hours
 manager.mytasks.form.label.workFlow.decimal = Minutes
 manager.mytasks.form.label.publicTask = Post task
@@ -19,6 +20,7 @@ manager.mytasks.error.endDate = End date must be later current date
 manager.mytasks.error.endDateNull = Dates can not be empty
 manager.mytasks.error.workFlow = Work flow must be equal or lowar than hours between start and end dates
 manager.mytasks.error.spam = This task contains spam words
+ manager.mytasks.error.hours = Can't be higher than 99
 
 manager.mytasks.form.button.update = Update task!
 manager.mytasks.form.button.create = Create task!

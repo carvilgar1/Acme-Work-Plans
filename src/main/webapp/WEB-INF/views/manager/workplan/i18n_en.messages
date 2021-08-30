@@ -1,10 +1,14 @@
 manager.workplan.list.label.startDate= Start Date
 manager.workplan.list.label.endDate= End Date
 manager.workplan.list.label.workLoad= Work Load
+manager.workplan.list.label.workLoad.entera = Hours
+manager.workplan.list.label.workLoad.decimal = Minutes
 
 manager.workplan.form.label.startDate= Start Date
 manager.workplan.form.label.endDate= End Date
 manager.workplan.form.label.workLoad= Work Load
+manager.workplan.form.label.workLoad.entera= Hours
+manager.workplan.form.label.workLoad.decimal= Minutes
 manager.workplan.form.label.publicPlan= IsPublic
 manager.workplan.form.button.create= Create
 manager.workplan.form.button.delete= Delete
