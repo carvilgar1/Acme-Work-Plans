@@ -131,6 +131,8 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
+				this.workLoad.setEntera(0);
+				this.workLoad.setDecimal(0);
 				this.tasks.stream().map(Task::getWorkFlow).forEach(x->this.workLoad.addTime(x));
 			}
   

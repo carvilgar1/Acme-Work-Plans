@@ -5,14 +5,14 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
-import acme.framework.entities.DomainEntity;
+import acme.framework.datatypes.DomainDatatype;
 import lombok.Getter;
 import lombok.Setter;
 
 @Embeddable
 @Getter
 @Setter
-public class WorkLoad extends DomainEntity implements Comparable<WorkLoad>{
+public class WorkLoad extends DomainDatatype implements Comparable<WorkLoad>{
 	
 	protected static final long	serialVersionUID	= 1L;
 	
