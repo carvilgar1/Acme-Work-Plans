@@ -67,7 +67,7 @@ public class ManagerWorkPlanShowService implements AbstractShowService<Manager, 
 		model.setAttribute("tasksInsert", t);
 		if(wp.getEndDate()!=null)model.setAttribute("canUpdate", wp.canUpdate());
 		else model.setAttribute("canUpdate",true);
-		request.unbind(entity, model, "startDate", "endDate", "workLoad", "publicPlan", "tasks");
+		request.unbind(entity, model, "startDate", "endDate", "workLoad.entera","workLoad.decimal", "publicPlan", "tasks");
 	}
 
 	@Override

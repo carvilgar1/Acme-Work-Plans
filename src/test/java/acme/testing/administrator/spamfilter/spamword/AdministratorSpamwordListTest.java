@@ -109,7 +109,7 @@ public class AdministratorSpamwordListTest extends AcmeWorkPlansTest{
 	@CsvFileSource(resources = "/manager/task/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(50)
 	public void filtroTaskPositive(final int recordIndex, final String title, final String startDate, 
-		final String endDate, final String entera,final String decimal, final String description, final String publicTask, final String url) {
+		final String endDate, final String workflow,final String entera,final String decimal, final String description, final String publicTask, final String url) {
 		super.signIn("manager3", "manager3");
 		
 		super.clickOnMenu("Manager", "Create task");
@@ -126,7 +126,8 @@ public class AdministratorSpamwordListTest extends AcmeWorkPlansTest{
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, startDate);
 		super.checkColumnHasValue(recordIndex, 2, endDate);
-		super.checkColumnHasValue(recordIndex, 3, description);
+		super.checkColumnHasValue(recordIndex, 3, workflow);
+		super.checkColumnHasValue(recordIndex, 4, description);
 		
 		super.clickOnListingRecord(recordIndex);
 		

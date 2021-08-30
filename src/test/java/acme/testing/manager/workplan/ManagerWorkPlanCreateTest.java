@@ -35,7 +35,8 @@ public class ManagerWorkPlanCreateTest extends AcmeWorkPlansTest {
 		//Volvemos a comprobar los datos
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workLoad", "0.00");
+		super.checkInputBoxHasValue("workLoad.entera", "0");
+		super.checkInputBoxHasValue("workLoad.decimal", "0");
 		
 		super.signOut();
 	}

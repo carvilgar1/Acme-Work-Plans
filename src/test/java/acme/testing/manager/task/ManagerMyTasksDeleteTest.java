@@ -20,7 +20,7 @@ public class ManagerMyTasksDeleteTest extends AcmeWorkPlansTest {
 	@CsvFileSource(resources = "/manager/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void deletePositive(final int recordIndex, final String title, final String startDate, 
-			final String endDate, final String entera,final String decimal, final String description, final String publicTask, final String url) {
+			final String endDate, final String workFlow,final String entera,final String decimal, final String description, final String publicTask, final String url) {
 		super.signIn("manager2", "manager2");
 		
 		super.clickOnMenu("Manager", "Own tasks");
@@ -28,7 +28,8 @@ public class ManagerMyTasksDeleteTest extends AcmeWorkPlansTest {
 		super.checkColumnHasValue(recordIndex-this.i, 0, title);
 		super.checkColumnHasValue(recordIndex-this.i, 1, startDate);
 		super.checkColumnHasValue(recordIndex-this.i, 2, endDate);
-		super.checkColumnHasValue(recordIndex-this.i, 3, description);
+		super.checkColumnHasValue(recordIndex-this.i, 3, workFlow);
+		super.checkColumnHasValue(recordIndex-this.i, 4, description);
 		
 		super.clickOnListingRecord(recordIndex-this.i);
 		

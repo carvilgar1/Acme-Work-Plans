@@ -41,7 +41,7 @@ public class ManagerWorkPlanDeleteTest extends AcmeWorkPlansTest{
 		//Iniciamos sesion
 		if(username!=null) this.signIn(username, password);
 		//Intentamos acceder al fomulario
-		super.driver.get("http://localhost:8080/Acme-Planner/manageracc/workplan/delete?id=41");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/manageracc/workplan/delete?id=41");
 		//COmprobamos que ha saltado un error
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
@@ -58,7 +58,7 @@ public class ManagerWorkPlanDeleteTest extends AcmeWorkPlansTest{
 		//Iniciamos sesion
 		super.signIn("manager3", "manager3");
 		//Accedemos a la url
-		final String url="http://localhost:8080/Acme-Planner/manageracc/workplan/delete?id=" + id;
+		final String url="http://localhost:8080/Acme-Work-Plans/manageracc/workplan/delete?id=" + id;
 		super.driver.get(url);
 		//Borramos el workplan
 		super.clickOnSubmitButton("Delete");
