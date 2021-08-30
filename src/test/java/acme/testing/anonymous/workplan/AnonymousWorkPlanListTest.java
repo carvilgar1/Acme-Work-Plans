@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AnonymousWorkPlanListTest extends AcmePlannerTest {
+public class AnonymousWorkPlanListTest extends AcmeWorkPlansTest {
 	
 	//Este método prueba las funcionalidades list y show de un workplan público y no finalizado (accediendo como un usuario anónimo).
 	//Se pretende listar workplans y mostrar sus detalles.
@@ -38,7 +38,7 @@ public class AnonymousWorkPlanListTest extends AcmePlannerTest {
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/anonymous/workplan/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/anonymous/workplan/list");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 	}

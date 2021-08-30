@@ -1,3 +1,3 @@
-recordIndex,startDate,endDate,workLoad,publicPlan
-0,2021/07/30 10:00,2021/07/30 11:30,26.00,true
-1,2021/08/12 12:00,2021/08/12 15:00,2.00,true
+recordIndex,startDate,endDate,workLoad,entera,decimal,publicPlan
+0,2021/09/30 10:00,2021/09/30 11:30,26.00,26,0,true
+1,2021/10/12 12:00,2021/10/12 15:00,5.00,5,0,true

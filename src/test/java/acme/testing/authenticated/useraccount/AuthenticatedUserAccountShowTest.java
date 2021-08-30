@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AuthenticatedUserAccountShowTest extends AcmePlannerTest{
+public class AuthenticatedUserAccountShowTest extends AcmeWorkPlansTest{
 	
 	/*En este test verificaremos que al iniciar sesion 
 	  la informacion mostrada sea la correcta*/
@@ -37,7 +37,7 @@ public class AuthenticatedUserAccountShowTest extends AcmePlannerTest{
 	@Test
 	@Order(20)
     public void showNegative() {
-        super.driver.get("http://localhost:8080/Acme-Planner/authenticated/user-account/update");
+        super.driver.get("http://localhost:8080/Acme-Work-Plans/authenticated/user-account/update");
         super.checkErrorsExist();
         
     }

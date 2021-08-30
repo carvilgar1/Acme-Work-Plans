@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanCreateTest extends AcmePlannerTest {
+public class ManagerWorkPlanCreateTest extends AcmeWorkPlansTest {
 	
 	//En este test comprobara que se crean los workplans correctamente, 
 	//para ello accederemos al formulario, rellenaremos los datos
@@ -35,7 +35,8 @@ public class ManagerWorkPlanCreateTest extends AcmePlannerTest {
 		//Volvemos a comprobar los datos
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workLoad", "0.00");
+		super.checkInputBoxHasValue("workLoad.entera", "0");
+		super.checkInputBoxHasValue("workLoad.decimal", "0");
 		
 		super.signOut();
 	}

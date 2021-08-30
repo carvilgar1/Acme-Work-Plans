@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorSpamwordListTest extends AcmePlannerTest{
+public class AdministratorSpamwordListTest extends AcmeWorkPlansTest{
 
 	
 	/*
@@ -42,7 +42,7 @@ public class AdministratorSpamwordListTest extends AcmePlannerTest{
 	@Order(30)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}
@@ -109,7 +109,7 @@ public class AdministratorSpamwordListTest extends AcmePlannerTest{
 	@CsvFileSource(resources = "/manager/task/createPositive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(50)
 	public void filtroTaskPositive(final int recordIndex, final String title, final String startDate, 
-		final String endDate, final String workFlow, final String description, final String publicTask, final String url) {
+		final String endDate, final String workflow,final String entera,final String decimal, final String description, final String publicTask, final String url) {
 		super.signIn("manager3", "manager3");
 		
 		super.clickOnMenu("Manager", "Create task");
@@ -126,14 +126,16 @@ public class AdministratorSpamwordListTest extends AcmePlannerTest{
 		super.checkColumnHasValue(recordIndex, 0, title);
 		super.checkColumnHasValue(recordIndex, 1, startDate);
 		super.checkColumnHasValue(recordIndex, 2, endDate);
-		super.checkColumnHasValue(recordIndex, 3, description);
+		super.checkColumnHasValue(recordIndex, 3, workflow);
+		super.checkColumnHasValue(recordIndex, 4, description);
 		
 		super.clickOnListingRecord(recordIndex);
 		
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow", workFlow);
+		super.checkInputBoxHasValue("workFlow.entera", entera);
+		super.checkInputBoxHasValue("workFlow.decimal", decimal);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("publicTask", publicTask);
 		super.checkInputBoxHasValue("url", url);

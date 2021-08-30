@@ -6,9 +6,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.openqa.selenium.By;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerWorkPlanDeleteTaskTest extends AcmePlannerTest{
+public class ManagerWorkPlanDeleteTaskTest extends AcmeWorkPlansTest{
 	
 	//En este test se va a probar el caso positivo de borrar una tarea a un work plan, 
 	//para ello se verificara la carga de trabajo,
@@ -16,19 +16,22 @@ public class ManagerWorkPlanDeleteTaskTest extends AcmePlannerTest{
 	@ParameterizedTest
 	@CsvFileSource(resources="/manager/workplan/deleteTask-positive.csv", encoding="utf-8", numLinesToSkip=1)
 	@Order(10)
-	public void updatePositive(final int recordIndex, final int taskIndex, final String workLoad, final String newWorkLoad) {
+	public void updatePositive(final int recordIndex, final int taskIndex, 
+		final String entera,final String decimal, final String newEntera, final String newDecimal) {
 		//Iniciamos sesion como manager y accedemos al formulario del plan de trabajo dado en los parametros
 		super.signIn("manager2", "manager2");
 		super.clickOnMenu("Manager", "Works Plans");
 		super.clickOnListingRecord(recordIndex);
 		//Comprobamos la carga de trabajo
-		super.checkInputBoxHasValue("workLoad", workLoad);
+		super.checkInputBoxHasValue("workLoad.entera", entera);
+		super.checkInputBoxHasValue("workLoad.decimal", decimal);
 		//Borramos la tarea dada por el parametro
 		final String xpath="//tr[" + taskIndex + "]/td[4]/form/button";
 		super.clickAndGo(By.xpath(xpath));
 		//Verificamos la nueva carga de trabajo
 		super.clickOnListingRecord(recordIndex);
-		super.checkInputBoxHasValue("workLoad", newWorkLoad);
+		super.checkInputBoxHasValue("workLoad.entera", newEntera);
+		super.checkInputBoxHasValue("workLoad.decimal", newDecimal);
 	}
 	
 	
@@ -40,7 +43,7 @@ public class ManagerWorkPlanDeleteTaskTest extends AcmePlannerTest{
 		//Iniciamos sesion
 		super.signIn("manager2", "manager2");
 		//Intetamos acceder a un formlario de un plan de trabajo que no es nuestro
-		super.driver.get("http://localhost:8080/Acme-Planner/manageracc/workplan/show?id=42");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/manageracc/workplan/show?id=42");
 		//Verificamos que ha saltado un error
 		super.checkErrorsExist();
 	}

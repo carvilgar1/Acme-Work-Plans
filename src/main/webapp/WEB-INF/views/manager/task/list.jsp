@@ -7,5 +7,6 @@
 	<acme:list-column code="manager.mytasks.list.label.title" path="title" width="20%"/>
 	<acme:list-column code="manager.mytasks.list.label.startDate" path="startDate" width="20%"/>
 	<acme:list-column code="manager.mytasks.list.label.endDate" path="endDate" width="20%"/>
+	<acme:list-column code="manager.mytasks.list.label.workFlow" path="workFlow" width="20%"/>
 	<acme:list-column code="manager.mytasks.list.label.description" path="description" width="20%"/>
 </acme:list>

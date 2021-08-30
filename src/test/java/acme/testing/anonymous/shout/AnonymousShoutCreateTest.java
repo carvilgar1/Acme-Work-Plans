@@ -4,15 +4,15 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AnonymousShoutCreateTest extends AcmePlannerTest{
+public class AnonymousShoutCreateTest extends AcmeWorkPlansTest{
 
 	/*
 		En este test comprobamos que un anonimo puede crear un shout.
 		Para ello accedemos al formulario de create a través del menú y rellenamos los campos necesarios
 		con valores validos:
-			- Author -> (NotBlank & Max 25 & No spam)
+			- Author -> (Min 5 & Max 25 & No spam)
 			- Text -> (NotBlank & Max 100 & No spam)
 			- Info -> (URL)
 		 y pulsando el boton Shout!.
@@ -46,7 +46,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest{
 		En este test comprobamos que un anonimo no puede crear un shout.
 		Para ello accedemos al formulario de create a través del menú y rellenamos los campos necesarios
 		con valores no validos:
-			- Author -> (NotBlank & Max 25 & No spam)
+			- Author -> (Min 5 & Max 25 & No spam)
 			- Text -> (NotBlank & Max 100 & No spam)
 			- Info -> (URL)
 		y pulsando el boton Shout!.
@@ -59,10 +59,6 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest{
 		
 		super.clickOnMenu("Anonymous", "Shout!");
 		
-		super.checkInputBoxHasValue("author", "John Doe");
-		super.checkInputBoxHasValue("text", "Lorem ipsum!");
-		super.checkInputBoxHasValue("info", "http://example.org");
-		
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("info", info);
@@ -70,9 +66,21 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest{
 		super.clickOnSubmitButton("Shout!");
 		
 		super.checkErrorsExist();
-		if(recordIndex==1) {
+		if(recordIndex==0) {
 			super.checkErrorsExist("author");
+			super.checkErrorsExist("text");
+		}
+		else if(recordIndex==1 || 
+			recordIndex==2 || recordIndex==3) {
+			super.checkErrorsExist("author");
+		}
+		
+		else if(recordIndex==9) {
 			super.checkErrorsExist("info");
+		}
+		
+		else{
+			super.checkErrorsExist("text");
 		}
 		
 	}
@@ -85,7 +93,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest{
 	@Order(30)
 	public void createNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/anonymous/shout/create");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/anonymous/shout/create");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 		

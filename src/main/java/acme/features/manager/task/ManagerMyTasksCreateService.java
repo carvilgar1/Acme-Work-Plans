@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.features.administrator.spamfilter.spamword.AdministratorSpamwordListService;
@@ -45,17 +46,19 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		assert request!=null;
 		assert entity!=null;
 		assert model!=null;
-		request.unbind(entity, model, "title", "startDate", "endDate", "description", "publicTask", "url");
+		request.unbind(entity, model, "title", "startDate", "endDate", "workFlow", "description", "publicTask", "url");
 	}
 
 	@Override
 	public Task instantiate(final Request<Task> request) {
 		assert request != null;
 		Task task;
-		final Double workFlow = 0.0;
 		final Boolean publicTask = false;
+		final WorkLoad wl = new WorkLoad();
+		wl.setEntera(0);
+		wl.setDecimal(0);
 		task = new Task();
-		task.setWorkFlow(workFlow);
+		task.setWorkFlow(wl);
 		task.setPublicTask(publicTask);
 		return task;
 	}
@@ -113,13 +116,15 @@ public class ManagerMyTasksCreateService implements AbstractCreateService<Manage
 		assert request!=null;
 		assert entity!=null;
 		
-		final Double workFlow = 0.0;
 		final Boolean publicTask = false;
 		final Manager manager;
 		final int id = request.getPrincipal().getActiveRoleId();
 		manager = this.managerRepo.findManagerById(id);
 		
-		entity.setWorkFlow(workFlow);
+		final WorkLoad wl = new WorkLoad();
+		wl.setEntera(0);
+		wl.setDecimal(0);
+		entity.setWorkFlow(wl);
 		entity.setPublicTask(publicTask);
 		entity.setManager(manager);
 		this.repository.save(entity);

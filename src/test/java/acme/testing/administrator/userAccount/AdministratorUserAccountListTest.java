@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorUserAccountListTest extends AcmePlannerTest{
+public class AdministratorUserAccountListTest extends AcmeWorkPlansTest{
 	
 
 	//En este test se prueba la funcionalidad list y show de los perfiles de usuario que no se les puede modificar su "status". El resultado esperado es que se listen
@@ -72,7 +72,7 @@ public class AdministratorUserAccountListTest extends AcmePlannerTest{
 	@Order(30)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/user-account/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/user-account/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

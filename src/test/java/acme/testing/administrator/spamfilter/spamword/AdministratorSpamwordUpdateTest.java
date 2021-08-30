@@ -4,9 +4,9 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.springframework.core.annotation.Order;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorSpamwordUpdateTest extends AcmePlannerTest {
+public class AdministratorSpamwordUpdateTest extends AcmeWorkPlansTest {
 
 	
 	/*
@@ -31,7 +31,7 @@ public class AdministratorSpamwordUpdateTest extends AcmePlannerTest {
 		super.clickOnSubmitButton("Update");
 		
 		super.checkSimplePath("/administrator/spamword/list");
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkInputBoxHasValue("spamword", spamword);
 
 		super.fillInputBoxIn("spamword", "duro");
@@ -62,7 +62,7 @@ public class AdministratorSpamwordUpdateTest extends AcmePlannerTest {
 		
 		super.checkErrorsExist();
 		
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkInputBoxHasValue("spamword", "duro");
 		
 		super.signOut();
@@ -77,7 +77,7 @@ public class AdministratorSpamwordUpdateTest extends AcmePlannerTest {
 	@Order(20)
 	public void updateNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=66");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=66");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

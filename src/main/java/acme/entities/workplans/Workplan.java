@@ -11,9 +11,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.entities.tasks.Task;
 import acme.framework.entities.DomainEntity;
@@ -38,8 +38,9 @@ public class Workplan extends DomainEntity{
 			@NotNull
 			private Date endDate;
 			
-			@Min(0)
-			private Double workLoad;
+			@NotNull
+			@Valid
+			private WorkLoad workLoad;
 			
 			@NotNull
 			private Boolean publicPlan;
@@ -73,6 +74,7 @@ public class Workplan extends DomainEntity{
 				final int prime = 31;
 				int result = super.hashCode();
 				result = prime * result + ((this.endDate == null) ? 0 : this.endDate.hashCode());
+				result = prime * result + ((this.manager == null) ? 0 : this.manager.hashCode());
 				result = prime * result + ((this.publicPlan == null) ? 0 : this.publicPlan.hashCode());
 				result = prime * result + ((this.startDate == null) ? 0 : this.startDate.hashCode());
 				result = prime * result + ((this.tasks == null) ? 0 : this.tasks.hashCode());
@@ -93,6 +95,11 @@ public class Workplan extends DomainEntity{
 					if (other.endDate != null)
 						return false;
 				} else if (!this.endDate.equals(other.endDate))
+					return false;
+				if (this.manager == null) {
+					if (other.manager != null)
+						return false;
+				} else if (!this.manager.equals(other.manager))
 					return false;
 				if (this.publicPlan == null) {
 					if (other.publicPlan != null)
@@ -116,6 +123,7 @@ public class Workplan extends DomainEntity{
 					return false;
 				return true;
 			}
+			
 
 			@Override
 			public String toString() {
@@ -123,7 +131,9 @@ public class Workplan extends DomainEntity{
 			}
 			
 			public void setWorkLoad() {
-				this.workLoad=this.tasks.stream().mapToDouble(Task::getWorkFlow).sum();
+				this.workLoad.setEntera(0);
+				this.workLoad.setDecimal(0);
+				this.tasks.stream().map(Task::getWorkFlow).forEach(x->this.workLoad.addTime(x));
 			}
   
 			public boolean canUpdate() {

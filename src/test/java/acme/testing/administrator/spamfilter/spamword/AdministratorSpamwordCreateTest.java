@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorSpamwordCreateTest extends AcmePlannerTest{
+public class AdministratorSpamwordCreateTest extends AcmeWorkPlansTest{
 
 	/*
 		En este test comprobamos que un administrador puede crear una palabra spam.
@@ -64,7 +64,7 @@ public class AdministratorSpamwordCreateTest extends AcmePlannerTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/create");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/create");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

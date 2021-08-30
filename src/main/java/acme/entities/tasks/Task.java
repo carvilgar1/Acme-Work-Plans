@@ -8,13 +8,13 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import javax.validation.Valid;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.URL;
 
+import acme.datatypes.WorkLoad;
 import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -41,8 +41,9 @@ public class Task extends DomainEntity{
 		@NotNull
 		private Date endDate;
 		
-		@Min(0)
-		private Double workFlow;
+		@NotNull
+		@Valid
+		private WorkLoad workFlow;
 		
 		@NotBlank
 		@Size(max = 500)
@@ -61,7 +62,6 @@ public class Task extends DomainEntity{
 			now = new Date(System.currentTimeMillis());
 			return this.endDate.after(now);
 		}
-
 		
 		// Relationships
 		@Valid

@@ -3,9 +3,9 @@ package acme.testing.authenticated.manager;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AuthenticatedManagerCreateTest extends AcmePlannerTest{
+public class AuthenticatedManagerCreateTest extends AcmeWorkPlansTest{
 
 
 	
@@ -34,7 +34,7 @@ public class AuthenticatedManagerCreateTest extends AcmePlannerTest{
     //Iniciamos sesion
 		super.signIn("manager2", "manager2");
     //Accedemos al formulario
-		super.driver.get("http://localhost:8080/Acme-Planner/authenticated/manager/create");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/authenticated/manager/create");
     //Verificamos que hay erroes
 		super.checkErrorsExist();
 	}

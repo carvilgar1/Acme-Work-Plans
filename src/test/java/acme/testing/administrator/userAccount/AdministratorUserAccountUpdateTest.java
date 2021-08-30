@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorUserAccountUpdateTest extends AcmePlannerTest{
+public class AdministratorUserAccountUpdateTest extends AcmeWorkPlansTest{
 	
 	
 	
@@ -20,7 +20,7 @@ public class AdministratorUserAccountUpdateTest extends AcmePlannerTest{
 	@Order(20)
 	public void updateNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/user-account/update?id=6");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/user-account/update?id=6");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}
@@ -33,7 +33,7 @@ public class AdministratorUserAccountUpdateTest extends AcmePlannerTest{
 	public void updatePositive(final int recordIndex, final String username, final String name, final String surname, final String email, final String roles, final String status,final String newStatus) {
 		super.signIn("administrator", "administrator");
 		
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/user-account/update?id=9");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/user-account/update?id=9");
 		
 		super.fillInputBoxIn("newStatus", newStatus);
 		super.clickOnSubmitButton("Update");

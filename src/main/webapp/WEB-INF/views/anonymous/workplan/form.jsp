@@ -19,7 +19,7 @@
 <acme:form>
 	<acme:form-textbox  code="anonymous.workplan.list.label.startDate" path="startDate" />
 	<acme:form-textbox  code="anonymous.workplan.list.label.endDate" path="endDate"/>
-	<acme:form-textbox  code="anonymous.workplan.list.label.workLoad" path="workLoad" />
+	<acme:form-textbox  code="anonymous.workplan.list.label.workLoad" path="workLoad"/>
 	<acme:form-textbox  code="anonymous.workplan.list.label.publicPlan" path="publicPlan" />
 	
 	<table class="table table-striped table-condensed table-hover nowrap w-100"> 

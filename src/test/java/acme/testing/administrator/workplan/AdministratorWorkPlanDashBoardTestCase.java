@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorWorkPlanDashBoardTestCase extends AcmePlannerTest{
+public class AdministratorWorkPlanDashBoardTestCase extends AcmeWorkPlansTest{
 	
 /*En el siguiente test se provara que los valores numericos devueltos por el servicio sean correctos*/
 	
@@ -52,7 +52,7 @@ public class AdministratorWorkPlanDashBoardTestCase extends AcmePlannerTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-			super.driver.get("http://localhost:8080/Acme-Planner/administrator/dashboardwp/list");
+			super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/dashboardwp/list");
 			super.checkErrorsExist();
 			if(username!=null) super.signOut();;
 	}

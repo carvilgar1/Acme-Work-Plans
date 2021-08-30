@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorThresholdListTest extends AcmePlannerTest {
+public class AdministratorThresholdListTest extends AcmeWorkPlansTest {
 
 	
 	/*
@@ -43,7 +43,7 @@ public class AdministratorThresholdListTest extends AcmePlannerTest {
 	@Order(30)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/threshold/list");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/threshold/list");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

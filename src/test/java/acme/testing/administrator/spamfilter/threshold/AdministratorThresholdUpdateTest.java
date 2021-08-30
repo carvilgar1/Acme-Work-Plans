@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorThresholdUpdateTest extends AcmePlannerTest{
+public class AdministratorThresholdUpdateTest extends AcmeWorkPlansTest{
 
 	
 	/*
@@ -31,7 +31,7 @@ public class AdministratorThresholdUpdateTest extends AcmePlannerTest{
         
         super.checkSimplePath("/administrator/threshold/list");
                 
-        super.driver.get("http://localhost:8080/Acme-Planner/administrator/threshold/update?id=67");
+        super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/threshold/update?id=67");
 
         super.checkInputBoxHasValue("value", value);
         
@@ -61,7 +61,7 @@ public class AdministratorThresholdUpdateTest extends AcmePlannerTest{
         super.checkErrorsExist();
         
                 
-        super.driver.get("http://localhost:8080/Acme-Planner/administrator/threshold/update?id=67");
+        super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/threshold/update?id=67");
 
         super.checkInputBoxHasValue("value", "10.00");
         super.signOut();
@@ -77,7 +77,7 @@ public class AdministratorThresholdUpdateTest extends AcmePlannerTest{
 	@Order(20)
 	public void updateNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/administrator/spamword/update?id=67");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/spamword/update?id=67");
 		super.checkErrorsExist();
 		if(username!=null) super.signOut();
 	}

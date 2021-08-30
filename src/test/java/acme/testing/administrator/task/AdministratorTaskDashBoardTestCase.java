@@ -4,16 +4,17 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class AdministratorTaskDashBoardTestCase extends AcmePlannerTest{
+public class AdministratorTaskDashBoardTestCase extends AcmeWorkPlansTest{
 	
 	/*En el siguiente test se provara que los valores numericos devueltos por el servicio sean correctos*/
 	
 	@ParameterizedTest
 	@CsvFileSource(resources = "/administrator/task/task-dashboard.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
-	public void listPositive( 
+	public void listPositive(
+	final Integer recordIndex,
 	final String publicTasks,
 	final String privateTasks,
 	final String finishedTasks,
@@ -26,6 +27,35 @@ public class AdministratorTaskDashBoardTestCase extends AcmePlannerTest{
 	final String deviationExecutionPeriod,
 	final String maxExecutionPeriod,
 	final String minExecutionPeriod) {
+		
+		
+		
+		if(recordIndex == 1) {
+			super.signIn("manager3","manager3");
+			
+			super.clickOnMenu("Manager", "Create task");
+			
+			super.fillInputBoxIn("title", "Aprobar DP2");
+			super.fillInputBoxIn("startDate", "2021/09/10 23:59");
+			super.fillInputBoxIn("endDate", "2021/09/11 23:59");
+			super.fillInputBoxIn("description", "Hacer un pedazo de examen");
+			super.clickOnSubmitButton("Create task!");
+			
+			this.signOut();
+		}
+		
+		if(recordIndex == 2) {
+			super.signIn("manager3","manager3");
+			
+			super.clickOnMenu("Manager", "Own tasks");
+			super.clickOnListingRecord(9);
+			
+			super.fillInputBoxIn("workFlow.entera", "24");
+			
+			super.clickOnSubmitButton("Update task!");
+			
+			this.signOut();
+		}
 		
 		this.signIn("administrator", "administrator");
 		super.clickOnMenu("Administrator", "Dashboard");
@@ -41,7 +71,7 @@ public class AdministratorTaskDashBoardTestCase extends AcmePlannerTest{
 	@Order(20)
 	public void listNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-			super.driver.get("http://localhost:8080/Acme-Planner/administrator/dashboard/list");
+			super.driver.get("http://localhost:8080/Acme-Work-Plans/administrator/dashboard/list");
 			super.checkErrorsExist();
 			if(username!=null) super.signOut();
 	}

@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.testing.AcmePlannerTest;
+import acme.testing.AcmeWorkPlansTest;
 
-public class ManagerMyTasksDeleteTest extends AcmePlannerTest {
+public class ManagerMyTasksDeleteTest extends AcmeWorkPlansTest {
 	
 	public Integer i = 0;
 	
@@ -20,7 +20,7 @@ public class ManagerMyTasksDeleteTest extends AcmePlannerTest {
 	@CsvFileSource(resources = "/manager/task/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	@Order(10)
 	public void deletePositive(final int recordIndex, final String title, final String startDate, 
-			final String endDate, final String workFlow, final String description, final String publicTask, final String url) {
+			final String endDate, final String workFlow,final String entera,final String decimal, final String description, final String publicTask, final String url) {
 		super.signIn("manager2", "manager2");
 		
 		super.clickOnMenu("Manager", "Own tasks");
@@ -28,14 +28,16 @@ public class ManagerMyTasksDeleteTest extends AcmePlannerTest {
 		super.checkColumnHasValue(recordIndex-this.i, 0, title);
 		super.checkColumnHasValue(recordIndex-this.i, 1, startDate);
 		super.checkColumnHasValue(recordIndex-this.i, 2, endDate);
-		super.checkColumnHasValue(recordIndex-this.i, 3, description);
+		super.checkColumnHasValue(recordIndex-this.i, 3, workFlow);
+		super.checkColumnHasValue(recordIndex-this.i, 4, description);
 		
 		super.clickOnListingRecord(recordIndex-this.i);
 		
 		super.checkInputBoxHasValue("title", title);
 		super.checkInputBoxHasValue("startDate", startDate);
 		super.checkInputBoxHasValue("endDate", endDate);
-		super.checkInputBoxHasValue("workFlow", workFlow);
+		super.checkInputBoxHasValue("workFlow.entera", entera);
+		super.checkInputBoxHasValue("workFlow.decimal", decimal);
 		super.checkInputBoxHasValue("description", description);
 		super.checkInputBoxHasValue("publicTask", publicTask);
 		super.checkInputBoxHasValue("url", url);
@@ -57,7 +59,7 @@ public class ManagerMyTasksDeleteTest extends AcmePlannerTest {
 	@Order(30)
 	public void deleteNegative(final String username, final String password) {
 		if(username!=null) this.signIn(username, password);
-		super.driver.get("http://localhost:8080/Acme-Planner/manageracc/task/delete?id=23");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/manageracc/task/delete?id=23");
 		super.checkPanicExists();
 		if(username!=null) super.signOut();
 	}
@@ -70,7 +72,7 @@ public class ManagerMyTasksDeleteTest extends AcmePlannerTest {
 	@Order(40)
 	public void deletePositive() {
 		super.signIn("manager3", "manager3");
-		super.driver.get("http://localhost:8080/Acme-Planner/manageracc/task/delete?id=18");
+		super.driver.get("http://localhost:8080/Acme-Work-Plans/manageracc/task/delete?id=18");
 		super.clickOnSubmitButton("Delete");
 		super.checkNotPanicExists();
 		super.signOut();
