@@ -2,6 +2,7 @@ package acme.features.manager.workplan;
 
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -125,8 +126,11 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 	
 		Task t = new Task();
 		final Optional<DomainEntity> opTask=this.tasksRepository.findById(request.getModel().getInteger("addTask"));
-		if(opTask.isPresent()) t=(Task) opTask.get();
+		if(opTask.isPresent()) t= (Task) opTask.get();
 		tasks=entity.getTasks();
+		//final Boolean i = tasks.contains(t);
+		final List<Boolean> j = tasks.stream().map(x->x.equals(t)).collect(Collectors.toList());
+	
 		tasks.add(t);
 		
 		if(t.getStartDate().before(entity.getStartDate())) {
