@@ -77,7 +77,7 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 			errors.state(request,b, "addTask", "manager.workplan.error.taskPrivate");
 		}
 		final Date actual = new Date(System.currentTimeMillis()-1);
-		final Boolean b1= t.getStartDate().before(actual);
+		final Boolean b1= t.getStartDate().after(actual);
 		errors.state(request, b1, "addTask", "manager.workplan.error.taskStarted");
 		
 		
@@ -107,6 +107,13 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 		
 		if(entity.getEndDate()!=null)request.getModel().setAttribute("canUpdate", entity.canUpdate());
 		else request.getModel().setAttribute("canUpdate",true);
+		
+		request.getModel().setAttribute("startDate", entity.getStartDate());
+		request.getModel().setAttribute("endDate", entity.getEndDate());
+		request.getModel().setAttribute("workLoad.entera", entity.getWorkLoad().getEntera());
+		request.getModel().setAttribute("workLoad.decimal", entity.getWorkLoad().getDecimal());
+		request.getModel().setAttribute("publicPlan", entity.getPublicPlan());
+		request.getModel().setAttribute("tasks",tasks);
 	}
 	
 	

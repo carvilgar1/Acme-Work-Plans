@@ -99,6 +99,13 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 		
 		if(entity.getEndDate()!=null)request.getModel().setAttribute("canUpdate", entity.canUpdate());
 		else request.getModel().setAttribute("canUpdate",true);
+		
+		request.getModel().setAttribute("startDate", entity.getStartDate());
+		request.getModel().setAttribute("endDate", entity.getEndDate());
+		request.getModel().setAttribute("workLoad.entera", entity.getWorkLoad().getEntera());
+		request.getModel().setAttribute("workLoad.decimal", entity.getWorkLoad().getDecimal());
+		request.getModel().setAttribute("publicPlan", entity.getPublicPlan());
+		request.getModel().setAttribute("tasks",tasks);
 	
 	}
 
