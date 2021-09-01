@@ -2,7 +2,6 @@ package acme.features.manager.workplan;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -16,7 +15,6 @@ import acme.features.manager.task.ManagerMyTasksRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.DomainEntity;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
@@ -69,10 +67,6 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 		assert entity != null;
 		assert errors != null;
 		
-		Workplan wp=new Workplan();
-		Optional<DomainEntity> opWorkplan;
-		opWorkplan= this.repository.findById(request.getModel().getInteger("id"));
-		if(opWorkplan.isPresent())wp=(Workplan) opWorkplan.get();
 		Set<Task> t;
 		t=entity.getTasks();
 		final Boolean arePublic=t.stream().allMatch(Task::getPublicTask);
@@ -81,7 +75,7 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 		Collection<Task>ta;
 		
 		Set<Task> tasks;
-		tasks=wp.getTasks();
+		tasks=entity.getTasks();
 		
 		if(!tasks.isEmpty()) {
 			final Date startRecommend=tasks.stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date());
@@ -96,29 +90,22 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 			request.getModel().setAttribute("startRecommend", startRecommend);
 			request.getModel().setAttribute("finalRecommend", finalRecommend);
 			}
-			if(Boolean.TRUE.equals(wp.getPublicPlan()))ta= this.tasksRepository.findMyPublicTasks(wp.getManager().getId());
-			else ta= this.tasksRepository.findMyTasks(wp.getManager().getId());
+			if(Boolean.TRUE.equals(entity.getPublicPlan()))ta= this.tasksRepository.findMyPublicTasks(entity.getManager().getId());
+			else ta= this.tasksRepository.findMyTasks(entity.getManager().getId());
 			
 			ta.stream().filter(x->!tasks.contains(x)).collect(Collectors.toSet());
 			
 			request.getModel().setAttribute("tasksInsert", ta);
 		
-		if(wp.getEndDate()!=null)request.getModel().setAttribute("canUpdate", wp.canUpdate());
+		if(entity.getEndDate()!=null)request.getModel().setAttribute("canUpdate", entity.canUpdate());
 		else request.getModel().setAttribute("canUpdate",true);
-		
-		request.getModel().setAttribute("tasks", wp.getTasks());
 	
 	}
 
 	@Override
 	public void update(final Request<Workplan> request, final Workplan entity) {
-		Workplan wp;
-		wp=this.repository.findById(entity.getId());
-		wp.setPublicPlan(true);
-		this.repository.save(wp);
-		
-		
-		
+		entity.setPublicPlan(true);
+		this.repository.save(entity);
 	}
 
 }
