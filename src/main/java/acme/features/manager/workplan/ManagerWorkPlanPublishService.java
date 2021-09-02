@@ -78,12 +78,12 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 		tasks=entity.getTasks();
 		
 		if(!tasks.isEmpty()) {
-			final Date startRecommend=tasks.stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date startRecommend=new Date(entity.getTasks().stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			startRecommend.setDate(startRecommend.getDate()-1);
 			startRecommend.setHours(8);
 			startRecommend.setMinutes(0);
 			
-			final Date finalRecommend=tasks.stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date finalRecommend=new Date(entity.getTasks().stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			finalRecommend.setDate(finalRecommend.getDate()+1);
 			finalRecommend.setHours(17);
 			finalRecommend.setMinutes(0);
@@ -99,6 +99,13 @@ public class ManagerWorkPlanPublishService implements AbstractUpdateService<Mana
 		
 		if(entity.getEndDate()!=null)request.getModel().setAttribute("canUpdate", entity.canUpdate());
 		else request.getModel().setAttribute("canUpdate",true);
+		
+		request.getModel().setAttribute("startDate", entity.getStartDate());
+		request.getModel().setAttribute("endDate", entity.getEndDate());
+		request.getModel().setAttribute("workLoad.entera", entity.getWorkLoad().getEntera());
+		request.getModel().setAttribute("workLoad.decimal", entity.getWorkLoad().getDecimal());
+		request.getModel().setAttribute("publicPlan", entity.getPublicPlan());
+		request.getModel().setAttribute("tasks",tasks);
 	
 	}
 
