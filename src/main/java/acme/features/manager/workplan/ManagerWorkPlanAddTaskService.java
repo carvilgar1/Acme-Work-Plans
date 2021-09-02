@@ -2,7 +2,6 @@ package acme.features.manager.workplan;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -88,12 +87,12 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 		tasks=entity.getTasks();
 		
 		if(!tasks.isEmpty()) {
-			final Date startRecommend=tasks.stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date startRecommend=new Date(entity.getTasks().stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			startRecommend.setDate(startRecommend.getDate()-1);
 			startRecommend.setHours(8);
 			startRecommend.setMinutes(0);
 			
-			final Date finalRecommend=tasks.stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date finalRecommend=new Date(entity.getTasks().stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			finalRecommend.setDate(finalRecommend.getDate()+1);
 			finalRecommend.setHours(17);
 			finalRecommend.setMinutes(0);
@@ -128,13 +127,11 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 		final Optional<DomainEntity> opTask=this.tasksRepository.findById(request.getModel().getInteger("addTask"));
 		if(opTask.isPresent()) t= (Task) opTask.get();
 		tasks=entity.getTasks();
-		//final Boolean i = tasks.contains(t);
-		final List<Boolean> j = tasks.stream().map(x->x.equals(t)).collect(Collectors.toList());
 	
 		tasks.add(t);
 		
 		if(t.getStartDate().before(entity.getStartDate())) {
-			final Date newStartDate = t.getStartDate();
+			final Date newStartDate = new Date(t.getStartDate().getTime());
 			newStartDate.setDate(newStartDate.getDate()-1);
 			newStartDate.setHours(8);
 			newStartDate.setMinutes(0);
@@ -142,7 +139,7 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 		}
 		
 		if(t.getEndDate().after(entity.getEndDate())) {
-			final Date newEndDate = t.getEndDate();
+			final Date newEndDate = new Date(t.getEndDate().getTime());
 			newEndDate.setDate(newEndDate.getDate()+1);
 			newEndDate.setHours(17);
 			newEndDate.setMinutes(0);

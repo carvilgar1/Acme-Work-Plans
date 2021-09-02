@@ -97,12 +97,12 @@ public class ManagerWorkPlanUpdateService implements AbstractUpdateService<Manag
 		Set<Task> tasks;
 		tasks=wp.getTasks();
 		if(!tasks.isEmpty()) {
-			final Date startRecommend=tasks.stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date startRecommend=new Date(wp.getTasks().stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			startRecommend.setDate(startRecommend.getDate()-1);
 			startRecommend.setHours(8);
 			startRecommend.setMinutes(0);
 			
-			final Date finalRecommend=tasks.stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date finalRecommend=new Date(wp.getTasks().stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			finalRecommend.setDate(finalRecommend.getDate()+1);
 			finalRecommend.setHours(17);
 			finalRecommend.setMinutes(0);
