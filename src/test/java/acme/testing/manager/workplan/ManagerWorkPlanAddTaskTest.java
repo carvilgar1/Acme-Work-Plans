@@ -18,7 +18,7 @@ public class ManagerWorkPlanAddTaskTest extends AcmeWorkPlansTest{
 	public void updatePositive(final int recordIndex, final String taskId, final String entera,final String decimal, 
 		final String newEntera, final String newDecimal) {
 		//Iniciamos sesion como manager y accedemos al formulario del plan de trabajo dado en los parametros
-		super.signIn("manager2", "manager2");
+		super.signIn("manager3", "manager3");
 		super.clickOnMenu("Manager", "Works Plans");
 		super.clickOnListingRecord(recordIndex);
 		//Comprobamos la carga de trabajo
@@ -41,7 +41,7 @@ public class ManagerWorkPlanAddTaskTest extends AcmeWorkPlansTest{
 		@Order(20)
 		public void updateNegative(final int recordIndex, final String taskId) {
 			//Iniciamos sesion como manager y accedemos al formulario del plan de trabajo dado en los parametros
-			super.signIn("manager2", "manager2");
+			super.signIn("manager3", "manager3");
 			super.clickOnMenu("Manager", "Works Plans");
 			super.clickOnListingRecord(recordIndex);
 			//Añadimos una nueva tarea que da error por validacion

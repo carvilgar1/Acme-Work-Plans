@@ -79,13 +79,14 @@ public class Task extends DomainEntity{
 		}
 
 		// Object interface -------------------------------------------------------
-		
 		@Override
 		public int hashCode() {
 			final int prime = 31;
 			int result = super.hashCode();
 			result = prime * result + ((this.description == null) ? 0 : this.description.hashCode());
 			result = prime * result + ((this.endDate == null) ? 0 : this.endDate.hashCode());
+			result = prime * result + ((this.manager == null) ? 0 : this.manager.hashCode());
+			result = prime * result + ((this.publicTask == null) ? 0 : this.publicTask.hashCode());
 			result = prime * result + ((this.startDate == null) ? 0 : this.startDate.hashCode());
 			result = prime * result + ((this.title == null) ? 0 : this.title.hashCode());
 			result = prime * result + ((this.url == null) ? 0 : this.url.hashCode());
@@ -112,6 +113,16 @@ public class Task extends DomainEntity{
 					return false;
 			} else if (!this.endDate.equals(other.endDate))
 				return false;
+			if (this.manager == null) {
+				if (other.manager != null)
+					return false;
+			} else if (!this.manager.equals(other.manager))
+				return false;
+			if (this.publicTask == null) {
+				if (other.publicTask != null)
+					return false;
+			} else if (!this.publicTask.equals(other.publicTask))
+				return false;
 			if (this.startDate == null) {
 				if (other.startDate != null)
 					return false;
@@ -134,13 +145,8 @@ public class Task extends DomainEntity{
 				return false;
 			return true;
 		}
-
 		@Override
 		public String toString() {
 			return "Task [title=" + this.title + ", startDate=" + this.startDate + ", endDate=" + this.endDate + ", workFlow=" + this.workFlow + ", description=" + this.description + ", url=" + this.url + "]";
 		}
-		
-		
-		
-
 }

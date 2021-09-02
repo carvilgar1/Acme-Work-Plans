@@ -36,8 +36,8 @@ public class AdministratorTaskDashBoardTestCase extends AcmeWorkPlansTest{
 			super.clickOnMenu("Manager", "Create task");
 			
 			super.fillInputBoxIn("title", "Aprobar DP2");
-			super.fillInputBoxIn("startDate", "2021/09/10 23:59");
-			super.fillInputBoxIn("endDate", "2021/09/11 23:59");
+			super.fillInputBoxIn("startDate", "2021/09/29 23:59");
+			super.fillInputBoxIn("endDate", "2021/09/30 23:59");
 			super.fillInputBoxIn("description", "Hacer un pedazo de examen");
 			super.clickOnSubmitButton("Create task!");
 			

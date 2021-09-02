@@ -69,11 +69,6 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 		assert entity != null;
 		assert errors != null;
 		
-		
-		Workplan wp=new Workplan();
-		Optional<DomainEntity> opWorkplan;
-		opWorkplan= this.repository.findById(request.getModel().getInteger("id"));
-		if(opWorkplan.isPresent())wp=(Workplan) opWorkplan.get();
 		Task t = new Task();
 		final Optional<DomainEntity> opTask=this.tasksRepository.findById(request.getModel().getInteger("addTask"));
 		if(opTask.isPresent()) t=(Task) opTask.get();
@@ -82,41 +77,42 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 			errors.state(request,b, "addTask", "manager.workplan.error.taskPrivate");
 		}
 		final Date actual = new Date(System.currentTimeMillis()-1);
-		final Boolean b1= t.getStartDate().before(actual);
+		final Boolean b1= t.getStartDate().after(actual);
 		errors.state(request, b1, "addTask", "manager.workplan.error.taskStarted");
 		
 		
 		final Collection<Task>ta;
 		
 		Set<Task> tasks;
-		tasks=wp.getTasks();
+		tasks=entity.getTasks();
 		
 		if(!tasks.isEmpty()) {
-			final Date startRecommend=tasks.stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date startRecommend=new Date(entity.getTasks().stream().map(Task::getStartDate).min((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			startRecommend.setDate(startRecommend.getDate()-1);
 			startRecommend.setHours(8);
 			startRecommend.setMinutes(0);
 			
-			final Date finalRecommend=tasks.stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date());
+			final Date finalRecommend=new Date(entity.getTasks().stream().map(Task::getEndDate).max((x,y)->x.compareTo(y)).orElse(new Date()).getTime());
 			finalRecommend.setDate(finalRecommend.getDate()+1);
 			finalRecommend.setHours(17);
 			finalRecommend.setMinutes(0);
 			request.getModel().setAttribute("startRecommend", startRecommend);
 			request.getModel().setAttribute("finalRecommend", finalRecommend);
 			}
-			if(Boolean.TRUE.equals(wp.getPublicPlan()))ta= this.tasksRepository.findMyPublicTasks(wp.getManager().getId());
-			else ta= this.tasksRepository.findMyTasks(wp.getManager().getId());
+			if(Boolean.TRUE.equals(entity.getPublicPlan()))ta= this.tasksRepository.findMyPublicTasks(entity.getManager().getId());
+			else ta= this.tasksRepository.findMyTasks(entity.getManager().getId());
 			ta.stream().filter(x->!tasks.contains(x)).collect(Collectors.toSet());
 			
 			request.getModel().setAttribute("tasksInsert", ta);
 		
-		if(wp.getEndDate()!=null)request.getModel().setAttribute("canUpdate", wp.canUpdate());
+		if(entity.getEndDate()!=null)request.getModel().setAttribute("canUpdate", entity.canUpdate());
 		else request.getModel().setAttribute("canUpdate",true);
 		
-		request.getModel().setAttribute("startDate", wp.getStartDate());
-		request.getModel().setAttribute("endDate", wp.getEndDate());
-		request.getModel().setAttribute("workLoad", wp.getWorkLoad());
-		request.getModel().setAttribute("publicPlan", wp.getPublicPlan());
+		request.getModel().setAttribute("startDate", entity.getStartDate());
+		request.getModel().setAttribute("endDate", entity.getEndDate());
+		request.getModel().setAttribute("workLoad.entera", entity.getWorkLoad().getEntera());
+		request.getModel().setAttribute("workLoad.decimal", entity.getWorkLoad().getDecimal());
+		request.getModel().setAttribute("publicPlan", entity.getPublicPlan());
 		request.getModel().setAttribute("tasks",tasks);
 	}
 	
@@ -126,33 +122,32 @@ public class ManagerWorkPlanAddTaskService implements AbstractUpdateService<Mana
 	@Override
 	public void update(final Request<Workplan> request, final Workplan entity) {
 		Set<Task> tasks;
-		Workplan wp;
-		wp=this.repository.findById(entity.getId());
 	
 		Task t = new Task();
 		final Optional<DomainEntity> opTask=this.tasksRepository.findById(request.getModel().getInteger("addTask"));
-		if(opTask.isPresent()) t=(Task) opTask.get();
+		if(opTask.isPresent()) t= (Task) opTask.get();
 		tasks=entity.getTasks();
+	
 		tasks.add(t);
 		
-		if(t.getStartDate().before(wp.getStartDate())) {
-			final Date newStartDate = t.getStartDate();
+		if(t.getStartDate().before(entity.getStartDate())) {
+			final Date newStartDate = new Date(t.getStartDate().getTime());
 			newStartDate.setDate(newStartDate.getDate()-1);
 			newStartDate.setHours(8);
 			newStartDate.setMinutes(0);
-			wp.setStartDate(newStartDate);
+			entity.setStartDate(newStartDate);
 		}
 		
-		if(t.getEndDate().after(wp.getEndDate())) {
-			final Date newEndDate = t.getEndDate();
+		if(t.getEndDate().after(entity.getEndDate())) {
+			final Date newEndDate = new Date(t.getEndDate().getTime());
 			newEndDate.setDate(newEndDate.getDate()+1);
 			newEndDate.setHours(17);
 			newEndDate.setMinutes(0);
-			wp.setEndDate(newEndDate);
+			entity.setEndDate(newEndDate);
 		}
-		wp.setTasks(tasks);
-		wp.setWorkLoad();
-		this.repository.save(wp);
+		entity.setTasks(tasks);
+		entity.setWorkLoad();
+		this.repository.save(entity);
 	}
 
 }
