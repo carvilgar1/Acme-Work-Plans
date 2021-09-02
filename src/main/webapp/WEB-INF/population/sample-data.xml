@@ -206,7 +206,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 	</bean> 
 	<bean id="task3" class="acme.entities.tasks.Task">
 		<property name="title" value="Pintar la habitacion"/>
-		<property name="startDate" value="2021/09/09 15:55"/>
+		<property name="startDate" value="2021/09/30 15:55"/>
 		<property name="endDate" value="2022/09/09 16:55"/>
 		<property name="workFlow" ref="workload3"/>
 		<property name="description" value="La pintura estaba gastada"/>
