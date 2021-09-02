@@ -79,7 +79,6 @@ public class Task extends DomainEntity{
 		}
 
 		// Object interface -------------------------------------------------------
-
 		@Override
 		public int hashCode() {
 			final int prime = 31;
@@ -146,7 +145,6 @@ public class Task extends DomainEntity{
 				return false;
 			return true;
 		}
-		
 		@Override
 		public String toString() {
 			return "Task [title=" + this.title + ", startDate=" + this.startDate + ", endDate=" + this.endDate + ", workFlow=" + this.workFlow + ", description=" + this.description + ", url=" + this.url + "]";
