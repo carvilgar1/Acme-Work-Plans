@@ -278,7 +278,7 @@ Task
 +title:String {NotBlank, Max=80}
 +startDate: Date {Temporal(TIMESTAMP), Past, NotNull}
 +endDate: Date {Temporal(TIMESTAMP),Future, NotNull}
-+workFlow: Double {Digits(integer = 2, fraction = 2), Min=0.00, Max=99.59}
++workFlow: WorkLoad {NotNull, Valid}
 +description: String {NotBlank, Max=500}
 +publicTask: Boolean {NotNull}
 +url: String {URL}</panel_attributes>
@@ -408,7 +408,7 @@ WorkPlan
 --
 +startDate: Date {Temporal(TIMESTAMP)}
 +endDate: Date {Temporal(TIMESTAMP)}
-+workLoad: Double {Min(0)}
++workLoad: WorkLoad {NotNull, Valid}
 +publicPlan: Boolean {NotNull}</panel_attributes>
     <additional_attributes/>
   </element>
@@ -441,10 +441,10 @@ Dashboard
 -privateTasks: Integer
 -finishedTasks: Integer
 -nonFinishedTasks: Integer
--averageWorkFlow: Double
--deviationWorkFlow: Double
--maxWorkFlow: Double
--minWorkFlow: Double
+-averageWorkFlow: String
+-deviationWorkFlow: String
+-maxWorkFlow: String
+-minWorkFlow: String
 -averageExecutionPeriod: Double
 -deviationExecutionPeriod: Double
 -maxExecutionPeriod: Double
@@ -469,10 +469,10 @@ Dashboardwp
 -privateWorkPlans: Integer
 -finishedWorkPlans: Integer
 -nonFinishedWorkPlans: Integer
--averageWorkLoad: Double
--deviationWorkLoad: Double
--maxWorkLoad: Double
--minWorkLoad: Double
+-averageWorkLoad: String
+-deviationWorkLoad: String
+-maxWorkLoad: String
+-minWorkLoad: String
 -averageExecutionPeriod: Double
 -deviationExecutionPeriod: Double
 -maxExecutionPeriod: Double
@@ -568,5 +568,22 @@ bg=blue</panel_attributes>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1032</x>
+      <y>138</y>
+      <w>186</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+WorkLoad
+--
++ entera: Integer {NotNull, Min(0)}
++ decimal: Integer {NotNull, Min(0), Max(59)}
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
